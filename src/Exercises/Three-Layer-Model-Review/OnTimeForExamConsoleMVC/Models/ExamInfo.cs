@@ -110,7 +110,7 @@ namespace OnTimeForExamConsoleMVC.Models
                 }
                 else
                 {
-                    examArrivalMessage += $"{totalTimeDifference} minutes before the start";
+                    examArrivalMessage += $"\n{totalTimeDifference} minutes before the start";
                 }
             }
             else

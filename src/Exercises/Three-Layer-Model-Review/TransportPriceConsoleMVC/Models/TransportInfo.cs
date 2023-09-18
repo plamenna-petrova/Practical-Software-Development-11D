@@ -44,26 +44,38 @@ namespace TransportPriceConsoleMVC.Models
 
         public double CalculateLowestPriceForKM()
         {
-            double calculatedLowestPriceForKM;
+            /*
+                the default value for the type double is 0
+                the keyword 'default' is used instead of 0
+             */
+
+            double calculatedLowestPriceForKM = default;
 
             if (NumberOfKM < 20)
             {
-                if (TimePeriod == "day")
+                switch (TimePeriod)
                 {
-                    calculatedLowestPriceForKM = 0.70 + NumberOfKM * 0.79;
-                }
-                else
-                {
-                    calculatedLowestPriceForKM = 0.70 + NumberOfKM * 0.90;
+                    case "day":
+                        calculatedLowestPriceForKM = 0.70 + NumberOfKM * 0.79;
+                        break;
+                    case "night":
+                        calculatedLowestPriceForKM = 0.70 + NumberOfKM * 0.90;
+                        break;
                 }
             }
             else if (NumberOfKM >= 20 && numberOfKM < 100)
             {
-                calculatedLowestPriceForKM = 0.09 * NumberOfKM;
+                if (TimePeriod == "day" || TimePeriod == "night")
+                {
+                    calculatedLowestPriceForKM = 0.09 * NumberOfKM;
+                }
             }
             else
             {
-                calculatedLowestPriceForKM = 0.06 * NumberOfKM;
+                if (TimePeriod == "day" || TimePeriod == "night")
+                {
+                    calculatedLowestPriceForKM = 0.06 * NumberOfKM;
+                }
             }
 
             return calculatedLowestPriceForKM;
