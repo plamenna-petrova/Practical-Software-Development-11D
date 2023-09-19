@@ -26,12 +26,12 @@ namespace OnTimeForExamConsoleMVC.Models
         {
             get
             {
-                return this.examHour;
+                return examHour;
             }
 
             set
             {
-                this.examHour = value;
+                examHour = value;
             }
         }
 
@@ -39,12 +39,12 @@ namespace OnTimeForExamConsoleMVC.Models
         {
             get
             {
-                return this.examMinutes;
+                return examMinutes;
             }
 
             set
             {
-                this.examMinutes = value;    
+                examMinutes = value;    
             }
         }
 
@@ -52,12 +52,12 @@ namespace OnTimeForExamConsoleMVC.Models
         {
             get
             {
-                return this.arrivalHour;
+                return arrivalHour;
             }
 
             set
             {
-                this.arrivalHour = value;
+                arrivalHour = value;
             }
         }
 
@@ -65,12 +65,12 @@ namespace OnTimeForExamConsoleMVC.Models
         {
             get 
             { 
-                return this.arrivalMinutes;
+                return arrivalMinutes;
             }
 
             set
             {
-                this.arrivalMinutes = value;
+                arrivalMinutes = value;
             }
         }
 

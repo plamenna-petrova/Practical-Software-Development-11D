@@ -11,13 +11,13 @@ namespace HistogramConsoleMVC.Models
 
         public HistogramEntriesInfo(int[] entries)
         {
-            this.Entries = entries;
+            Entries = entries;
         }
 
         public int[] Entries
         {
-            get { return this.entries; }
-            set { this.entries = value; }
+            get { return entries; }
+            set { entries = value; }
         }
 
         public double[] GetHistogramPercentageEntries()
@@ -53,7 +53,7 @@ namespace HistogramConsoleMVC.Models
 
         private double CalculatePercentageForPartition(int partitionEntriesCount, int totalEntriesCount)
         {
-            return ((double) partitionEntriesCount / totalEntriesCount) * 100;
+            return (double) partitionEntriesCount / totalEntriesCount * 100;
         }
     }
 }

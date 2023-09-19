@@ -19,7 +19,7 @@ namespace TransportPriceConsoleMVC.Views
 
         public void ShowLowestPriceForKM()
         {
-            Console.WriteLine(Math.Round(LowestPriceForKM, 2));
+            Console.WriteLine(Math.Round(this.LowestPriceForKM, 2));
         }
 
         private void GetValues()
