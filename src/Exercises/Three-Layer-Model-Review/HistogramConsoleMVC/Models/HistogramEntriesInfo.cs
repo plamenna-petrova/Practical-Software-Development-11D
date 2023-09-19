@@ -53,7 +53,7 @@ namespace HistogramConsoleMVC.Models
 
         private double CalculatePercentageForPartition(int partitionEntriesCount, int totalEntriesCount)
         {
-            return ((double) partitionEntriesCount / totalEntriesCount) * 100;
+            return (double) partitionEntriesCount / totalEntriesCount * 100;
         }
     }
 }
