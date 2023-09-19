@@ -11,8 +11,6 @@ namespace HistogramConsoleMVC.Views
             GetValues();
         }
 
-        public int NumberOfHistogramEntries { get; set; }
-
         public int[] HistogramEntries { get; set; } 
 
         public double[] HistogramPartitionPercentages { get; set; }
@@ -27,10 +25,10 @@ namespace HistogramConsoleMVC.Views
 
         private void GetValues()
         {
-            NumberOfHistogramEntries = int.Parse(Console.ReadLine());
-            HistogramEntries = new int[NumberOfHistogramEntries];
+            int numberOfHistogramEntries = int.Parse(Console.ReadLine());
+            HistogramEntries = new int[numberOfHistogramEntries];
 
-            for (int i = 0; i < NumberOfHistogramEntries; i++)
+            for (int i = 0; i < numberOfHistogramEntries; i++)
             {
                 HistogramEntries[i] = int.Parse(Console.ReadLine());
             }
