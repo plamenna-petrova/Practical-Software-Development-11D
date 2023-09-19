@@ -35,7 +35,7 @@ namespace OnTimeForExamConsoleMVC.Views
             ExamHour = int.Parse(Console.ReadLine());
             ExamMinutes = int.Parse(Console.ReadLine());
             ArrivalHour = int.Parse(Console.ReadLine());
-            ArrivalMinutes = int.Parse((Console.ReadLine()));
+            ArrivalMinutes = int.Parse(Console.ReadLine());
         }
     }
 }

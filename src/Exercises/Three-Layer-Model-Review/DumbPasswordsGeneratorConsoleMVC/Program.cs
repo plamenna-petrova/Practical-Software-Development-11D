@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DumbPasswordsGeneratorConsoleMVC.Controllers;
+using System;
 
 namespace DumbPasswordsGeneratorConsoleMVC
 {
@@ -6,7 +7,7 @@ namespace DumbPasswordsGeneratorConsoleMVC
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            DumbPasswordsGeneratorController dumbPasswordsGeneratorController = new DumbPasswordsGeneratorController();
         }
     }
 }

@@ -25,9 +25,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RawData", "Exercises\Entran
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistogramConsoleMVC", "Exercises\Three-Layer-Model-Review\HistogramConsoleMVC\HistogramConsoleMVC.csproj", "{F131DC99-4CE6-4784-B7ED-89832BBEA833}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DumbPasswordsGeneratorConsoleMVC", "Exercises\Three-Layer-Model-Review\DumbPasswordsGeneratorConsoleMVC\DumbPasswordsGeneratorConsoleMVC.csproj", "{3F7D5FE4-5A9C-4FCD-BA3F-7C6C3584BA0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumbPasswordsGeneratorConsoleMVC", "Exercises\Three-Layer-Model-Review\DumbPasswordsGeneratorConsoleMVC\DumbPasswordsGeneratorConsoleMVC.csproj", "{3F7D5FE4-5A9C-4FCD-BA3F-7C6C3584BA0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Introduction", "Exercises\Entrance-Exam-Preparation\Introduction\Introduction.csproj", "{63BE73DA-C12A-4E56-B87C-DA2F936C115F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Introduction", "Exercises\Entrance-Exam-Preparation\Introduction\Introduction.csproj", "{63BE73DA-C12A-4E56-B87C-DA2F936C115F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegetablesMarketConsoleMVC", "Exercises\Three-Layer-Model-Review\VegetablesMarketConsoleMVC\VegetablesMarketConsoleMVC.csproj", "{F5D1CED4-3C3A-47E7-8AB9-20E0340C1176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolPipesConsoleMVC", "Exercises\Three-Layer-Model-Review\PoolPipesConsoleMVC\PoolPipesConsoleMVC.csproj", "{9DD2CA48-EA2C-4316-B6C6-D68AD5E70BC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyConsoleMVC", "Exercises\Three-Layer-Model-Review\JourneyConsoleMVC\JourneyConsoleMVC.csproj", "{69FE3DAC-B457-422A-8F33-77E6DBA561C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +85,18 @@ Global
 		{63BE73DA-C12A-4E56-B87C-DA2F936C115F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63BE73DA-C12A-4E56-B87C-DA2F936C115F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63BE73DA-C12A-4E56-B87C-DA2F936C115F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5D1CED4-3C3A-47E7-8AB9-20E0340C1176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5D1CED4-3C3A-47E7-8AB9-20E0340C1176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5D1CED4-3C3A-47E7-8AB9-20E0340C1176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5D1CED4-3C3A-47E7-8AB9-20E0340C1176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD2CA48-EA2C-4316-B6C6-D68AD5E70BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD2CA48-EA2C-4316-B6C6-D68AD5E70BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD2CA48-EA2C-4316-B6C6-D68AD5E70BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD2CA48-EA2C-4316-B6C6-D68AD5E70BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69FE3DAC-B457-422A-8F33-77E6DBA561C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FE3DAC-B457-422A-8F33-77E6DBA561C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FE3DAC-B457-422A-8F33-77E6DBA561C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FE3DAC-B457-422A-8F33-77E6DBA561C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +113,9 @@ Global
 		{F131DC99-4CE6-4784-B7ED-89832BBEA833} = {57FBFDAB-4FEF-4BAC-8478-3ACA6D659D1E}
 		{3F7D5FE4-5A9C-4FCD-BA3F-7C6C3584BA0F} = {57FBFDAB-4FEF-4BAC-8478-3ACA6D659D1E}
 		{63BE73DA-C12A-4E56-B87C-DA2F936C115F} = {CF9EBA78-7176-431B-88C2-DA5D41514A0B}
+		{F5D1CED4-3C3A-47E7-8AB9-20E0340C1176} = {57FBFDAB-4FEF-4BAC-8478-3ACA6D659D1E}
+		{9DD2CA48-EA2C-4316-B6C6-D68AD5E70BC3} = {57FBFDAB-4FEF-4BAC-8478-3ACA6D659D1E}
+		{69FE3DAC-B457-422A-8F33-77E6DBA561C1} = {57FBFDAB-4FEF-4BAC-8478-3ACA6D659D1E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
