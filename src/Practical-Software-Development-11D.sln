@@ -29,17 +29,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumbPasswordsGeneratorConso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Introduction", "Exercises\Entrance-Exam-Preparation\Introduction\Introduction.csproj", "{63BE73DA-C12A-4E56-B87C-DA2F936C115F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegetablesMarketConsoleMVC", "Exercises\Three-Layer-Model-Review\VegetablesMarketConsoleMVC\VegetablesMarketConsoleMVC.csproj", "{F5D1CED4-3C3A-47E7-8AB9-20E0340C1176}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegetablesMarketConsoleMVC", "Exercises\Three-Layer-Model-Review\VegetablesMarketConsoleMVC\VegetablesMarketConsoleMVC.csproj", "{F5D1CED4-3C3A-47E7-8AB9-20E0340C1176}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolPipesConsoleMVC", "Exercises\Three-Layer-Model-Review\PoolPipesConsoleMVC\PoolPipesConsoleMVC.csproj", "{9DD2CA48-EA2C-4316-B6C6-D68AD5E70BC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoolPipesConsoleMVC", "Exercises\Three-Layer-Model-Review\PoolPipesConsoleMVC\PoolPipesConsoleMVC.csproj", "{9DD2CA48-EA2C-4316-B6C6-D68AD5E70BC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyConsoleMVC", "Exercises\Three-Layer-Model-Review\JourneyConsoleMVC\JourneyConsoleMVC.csproj", "{69FE3DAC-B457-422A-8F33-77E6DBA561C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JourneyConsoleMVC", "Exercises\Three-Layer-Model-Review\JourneyConsoleMVC\JourneyConsoleMVC.csproj", "{69FE3DAC-B457-422A-8F33-77E6DBA561C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DivisionWithoutRemainderConsoleMVC", "Exercises\Three-Layer-Model-Review\DivisionWithoutRemainderConsoleMVC\DivisionWithoutRemainderConsoleMVC.csproj", "{213C5F03-75FB-475B-8901-4AE15D0D211F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DivisionWithoutRemainderConsoleMVC", "Exercises\Three-Layer-Model-Review\DivisionWithoutRemainderConsoleMVC\DivisionWithoutRemainderConsoleMVC.csproj", "{213C5F03-75FB-475B-8901-4AE15D0D211F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicalNumbersConsoleMVC", "Exercises\Three-Layer-Model-Review\MagicalNumbersConsoleMVC\MagicalNumbersConsoleMVC.csproj", "{6F05D844-E524-4F5A-8796-C846F65BF72B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalNumbersConsoleMVC", "Exercises\Three-Layer-Model-Review\MagicalNumbersConsoleMVC\MagicalNumbersConsoleMVC.csproj", "{6F05D844-E524-4F5A-8796-C846F65BF72B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TilesReparationConsoleMVC", "Exercises\Three-Layer-Model-Review\TilesReparationConsoleMVC\TilesReparationConsoleMVC.csproj", "{E6E29FFB-BB59-4C5F-8872-48F2DBC17F29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TilesReparationConsoleMVC", "Exercises\Three-Layer-Model-Review\TilesReparationConsoleMVC\TilesReparationConsoleMVC.csproj", "{E6E29FFB-BB59-4C5F-8872-48F2DBC17F29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit-Testing", "Unit-Testing", "{A6D48563-823C-4847-9E2B-49B053F04A72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Division.Example", "Exercises\Unit-Testing\DivisionExampleWithTests\Division.Example\Division.Example.csproj", "{3CC42AE0-E12D-45F2-B6B4-6D783B02679C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Division.Tests", "Exercises\Unit-Testing\DivisionExampleWithTests\Division.Tests\Division.Tests.csproj", "{D9622158-96FB-42C0-8EC9-77BEEC6B493D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DivisionExample", "DivisionExample", "{13A37696-9D63-48E0-B42C-963D77EBB926}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameExample", "GameExample", "{DE09590A-1712-4B69-8864-E2AD711DF3A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skeleton", "Exercises\Unit-Testing\GameExample\Skeleton\Skeleton.csproj", "{D6A722BC-91FE-43E0-9075-DA5821C13171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Tests", "Exercises\Unit-Testing\GameExample\Game.Tests\Game.Tests.csproj", "{A803671A-5AC6-4EAE-8F02-E3D36D7AC654}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,6 +129,22 @@ Global
 		{E6E29FFB-BB59-4C5F-8872-48F2DBC17F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6E29FFB-BB59-4C5F-8872-48F2DBC17F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6E29FFB-BB59-4C5F-8872-48F2DBC17F29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CC42AE0-E12D-45F2-B6B4-6D783B02679C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CC42AE0-E12D-45F2-B6B4-6D783B02679C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CC42AE0-E12D-45F2-B6B4-6D783B02679C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CC42AE0-E12D-45F2-B6B4-6D783B02679C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9622158-96FB-42C0-8EC9-77BEEC6B493D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9622158-96FB-42C0-8EC9-77BEEC6B493D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9622158-96FB-42C0-8EC9-77BEEC6B493D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9622158-96FB-42C0-8EC9-77BEEC6B493D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6A722BC-91FE-43E0-9075-DA5821C13171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6A722BC-91FE-43E0-9075-DA5821C13171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6A722BC-91FE-43E0-9075-DA5821C13171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6A722BC-91FE-43E0-9075-DA5821C13171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A803671A-5AC6-4EAE-8F02-E3D36D7AC654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A803671A-5AC6-4EAE-8F02-E3D36D7AC654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A803671A-5AC6-4EAE-8F02-E3D36D7AC654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A803671A-5AC6-4EAE-8F02-E3D36D7AC654}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +167,12 @@ Global
 		{213C5F03-75FB-475B-8901-4AE15D0D211F} = {57FBFDAB-4FEF-4BAC-8478-3ACA6D659D1E}
 		{6F05D844-E524-4F5A-8796-C846F65BF72B} = {57FBFDAB-4FEF-4BAC-8478-3ACA6D659D1E}
 		{E6E29FFB-BB59-4C5F-8872-48F2DBC17F29} = {57FBFDAB-4FEF-4BAC-8478-3ACA6D659D1E}
+		{3CC42AE0-E12D-45F2-B6B4-6D783B02679C} = {13A37696-9D63-48E0-B42C-963D77EBB926}
+		{D9622158-96FB-42C0-8EC9-77BEEC6B493D} = {13A37696-9D63-48E0-B42C-963D77EBB926}
+		{13A37696-9D63-48E0-B42C-963D77EBB926} = {A6D48563-823C-4847-9E2B-49B053F04A72}
+		{DE09590A-1712-4B69-8864-E2AD711DF3A8} = {A6D48563-823C-4847-9E2B-49B053F04A72}
+		{D6A722BC-91FE-43E0-9075-DA5821C13171} = {DE09590A-1712-4B69-8864-E2AD711DF3A8}
+		{A803671A-5AC6-4EAE-8F02-E3D36D7AC654} = {DE09590A-1712-4B69-8864-E2AD711DF3A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
