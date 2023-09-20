@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -12,6 +12,10 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.3.0" />
     <PackageReference Include="NUnit.Analyzers" Version="3.5.0" />
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Division.Example\Division.Example.csproj" />
   </ItemGroup>
 
 </Project>
