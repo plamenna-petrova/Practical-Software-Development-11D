@@ -17,7 +17,7 @@ namespace Game.Tests
 
             hero.Attack(dummy);
 
-            Assert.That(dummy.Health, Is.EqualTo(10), "Dummy does't lose health after attack");
+            Assert.That(dummy.Health, Is.EqualTo(10), "Dummy doesn't lose health after attack");
         }
 
         [Test]

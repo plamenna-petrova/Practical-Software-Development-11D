@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace Division.Tests
 {
     [TestFixture]
-    public class Tests
+    public class TestDivision
     {
         [Test]
         public void Dividing4By2Equals2()

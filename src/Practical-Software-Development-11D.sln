@@ -29,17 +29,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumbPasswordsGeneratorConso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Introduction", "Exercises\Entrance-Exam-Preparation\Introduction\Introduction.csproj", "{63BE73DA-C12A-4E56-B87C-DA2F936C115F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegetablesMarketConsoleMVC", "Exercises\Three-Layer-Model-Review\VegetablesMarketConsoleMVC\VegetablesMarketConsoleMVC.csproj", "{F5D1CED4-3C3A-47E7-8AB9-20E0340C1176}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegetablesMarketConsoleMVC", "Exercises\Three-Layer-Model-Review\VegetablesMarketConsoleMVC\VegetablesMarketConsoleMVC.csproj", "{F5D1CED4-3C3A-47E7-8AB9-20E0340C1176}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolPipesConsoleMVC", "Exercises\Three-Layer-Model-Review\PoolPipesConsoleMVC\PoolPipesConsoleMVC.csproj", "{9DD2CA48-EA2C-4316-B6C6-D68AD5E70BC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoolPipesConsoleMVC", "Exercises\Three-Layer-Model-Review\PoolPipesConsoleMVC\PoolPipesConsoleMVC.csproj", "{9DD2CA48-EA2C-4316-B6C6-D68AD5E70BC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyConsoleMVC", "Exercises\Three-Layer-Model-Review\JourneyConsoleMVC\JourneyConsoleMVC.csproj", "{69FE3DAC-B457-422A-8F33-77E6DBA561C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JourneyConsoleMVC", "Exercises\Three-Layer-Model-Review\JourneyConsoleMVC\JourneyConsoleMVC.csproj", "{69FE3DAC-B457-422A-8F33-77E6DBA561C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DivisionWithoutRemainderConsoleMVC", "Exercises\Three-Layer-Model-Review\DivisionWithoutRemainderConsoleMVC\DivisionWithoutRemainderConsoleMVC.csproj", "{213C5F03-75FB-475B-8901-4AE15D0D211F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DivisionWithoutRemainderConsoleMVC", "Exercises\Three-Layer-Model-Review\DivisionWithoutRemainderConsoleMVC\DivisionWithoutRemainderConsoleMVC.csproj", "{213C5F03-75FB-475B-8901-4AE15D0D211F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicalNumbersConsoleMVC", "Exercises\Three-Layer-Model-Review\MagicalNumbersConsoleMVC\MagicalNumbersConsoleMVC.csproj", "{6F05D844-E524-4F5A-8796-C846F65BF72B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalNumbersConsoleMVC", "Exercises\Three-Layer-Model-Review\MagicalNumbersConsoleMVC\MagicalNumbersConsoleMVC.csproj", "{6F05D844-E524-4F5A-8796-C846F65BF72B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TilesReparationConsoleMVC", "Exercises\Three-Layer-Model-Review\TilesReparationConsoleMVC\TilesReparationConsoleMVC.csproj", "{E6E29FFB-BB59-4C5F-8872-48F2DBC17F29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TilesReparationConsoleMVC", "Exercises\Three-Layer-Model-Review\TilesReparationConsoleMVC\TilesReparationConsoleMVC.csproj", "{E6E29FFB-BB59-4C5F-8872-48F2DBC17F29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit-Testing", "Unit-Testing", "{0915793B-4B90-4286-A314-1985A1706561}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
