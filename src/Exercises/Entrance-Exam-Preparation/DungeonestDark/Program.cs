@@ -21,7 +21,7 @@ namespace DungeonestDark
         }
 
         /*
-            note that the getters and setters can be also positioned in a inline direction
+            note that the getters and setters can be also positioned in an inline direction
          */
 
         public int HP
