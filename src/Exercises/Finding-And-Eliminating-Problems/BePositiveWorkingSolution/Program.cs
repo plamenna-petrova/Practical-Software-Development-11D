@@ -24,9 +24,7 @@ namespace BePositiveWorkingSolution
                     }
                 }
 
-                bool negativeNum = false;
-
-                List<int> positiveNumbers = new List<int>();
+                bool found = false;
 
                 for (int j = 0; j < numbers.Count; j++)
                 {
@@ -34,34 +32,43 @@ namespace BePositiveWorkingSolution
 
                     if (currentNum > 0)
                     {
-                        positiveNumbers.Add(currentNum);    
+                        if (found)
+                        {
+                            Console.Write(" ");
+                        }
+
+                        Console.Write(currentNum);
+
+                        found = true;
                     }
                     else
                     {
-                        negativeNum = true;
-
                         currentNum += numbers[j + 1];
 
-                        if (currentNum >= 0)
+                        if (currentNum > 0)
                         {
-                            positiveNumbers.Add(currentNum);               
+                            if (found)
+                            {
+                                Console.Write(" ");
+                            }
+
+                            Console.Write(currentNum);
+
+                            found = true;
                         }
+
+                        j++;
                     }
                 }
 
-                if (positiveNumbers.Any())
-                {
-                    foreach (var num in positiveNumbers)
-                    {
-                        Console.Write($"{num} ");
-                    }
-                }
-                else
+                if (!found)
                 {
                     Console.WriteLine("(empty)");
                 }
-
-                Console.WriteLine();
+                else
+                {
+                    Console.WriteLine();
+                }
             }
         }
     }
