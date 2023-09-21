@@ -71,11 +71,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayTestWorkingSolution", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubstringWrongSolution", "Exercises\Finding-And-Eliminating-Problems\SubstringWrongSolution\SubstringWrongSolution.csproj", "{BDBE96E0-2765-44A2-A034-6B639278D494}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubstringWorkingSolution", "Exercises\Finding-And-Eliminating-Problems\SubstringWorkingSolution\SubstringWorkingSolution.csproj", "{96D7575D-F432-405F-AAB1-07EEC13331C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubstringWorkingSolution", "Exercises\Finding-And-Eliminating-Problems\SubstringWorkingSolution\SubstringWorkingSolution.csproj", "{96D7575D-F432-405F-AAB1-07EEC13331C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitCarouselWrongSolution", "Exercises\Finding-And-Eliminating-Problems\BitCarouselWrongSolution\BitCarouselWrongSolution.csproj", "{EE3F1F14-6313-4737-AD23-C6ED40AF6FBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitCarouselWrongSolution", "Exercises\Finding-And-Eliminating-Problems\BitCarouselWrongSolution\BitCarouselWrongSolution.csproj", "{EE3F1F14-6313-4737-AD23-C6ED40AF6FBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitCarouselWorkingSolution", "Exercises\Finding-And-Eliminating-Problems\BitCarouselWorkingSolution\BitCarouselWorkingSolution.csproj", "{397A7CC8-3226-4C87-B143-44CE8E5F9EAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitCarouselWorkingSolution", "Exercises\Finding-And-Eliminating-Problems\BitCarouselWorkingSolution\BitCarouselWorkingSolution.csproj", "{397A7CC8-3226-4C87-B143-44CE8E5F9EAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Refactoring-And-Progressive-Changes", "Refactoring-And-Progressive-Changes", "{40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnknownMethod", "Exercises\Refactoring-And-Progressive-Changes\UnknownMethod\UnknownMethod.csproj", "{1276139E-2C64-4EEE-8704-43FA88FE84CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraySliderBadCode", "Exercises\Refactoring-And-Progressive-Changes\ArraySliderBadCode\ArraySliderBadCode.csproj", "{0E85D4F3-F208-4FEC-A4D6-FB4DC6FEAA88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraySliderRefactoredCode", "Exercises\Refactoring-And-Progressive-Changes\ArraySliderRefactoredCode\ArraySliderRefactoredCode.csproj", "{1B76293C-B46A-41BE-BFE0-8A171D522466}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -207,6 +215,18 @@ Global
 		{397A7CC8-3226-4C87-B143-44CE8E5F9EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{397A7CC8-3226-4C87-B143-44CE8E5F9EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{397A7CC8-3226-4C87-B143-44CE8E5F9EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1276139E-2C64-4EEE-8704-43FA88FE84CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1276139E-2C64-4EEE-8704-43FA88FE84CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1276139E-2C64-4EEE-8704-43FA88FE84CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1276139E-2C64-4EEE-8704-43FA88FE84CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E85D4F3-F208-4FEC-A4D6-FB4DC6FEAA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E85D4F3-F208-4FEC-A4D6-FB4DC6FEAA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E85D4F3-F208-4FEC-A4D6-FB4DC6FEAA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E85D4F3-F208-4FEC-A4D6-FB4DC6FEAA88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B76293C-B46A-41BE-BFE0-8A171D522466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B76293C-B46A-41BE-BFE0-8A171D522466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B76293C-B46A-41BE-BFE0-8A171D522466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B76293C-B46A-41BE-BFE0-8A171D522466}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -245,6 +265,9 @@ Global
 		{96D7575D-F432-405F-AAB1-07EEC13331C0} = {6EE15BA4-D5C0-4B49-9692-78E8CFA6F4D1}
 		{EE3F1F14-6313-4737-AD23-C6ED40AF6FBB} = {6EE15BA4-D5C0-4B49-9692-78E8CFA6F4D1}
 		{397A7CC8-3226-4C87-B143-44CE8E5F9EAD} = {6EE15BA4-D5C0-4B49-9692-78E8CFA6F4D1}
+		{1276139E-2C64-4EEE-8704-43FA88FE84CF} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{0E85D4F3-F208-4FEC-A4D6-FB4DC6FEAA88} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{1B76293C-B46A-41BE-BFE0-8A171D522466} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
