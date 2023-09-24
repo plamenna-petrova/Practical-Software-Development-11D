@@ -17,7 +17,7 @@ namespace OnTimeForExamConsoleMVC.Models
         public ExamInfo(int examHour, int examMinutes, int arrivalHour, int arrivalMinutes)
         {
             ExamHour = examHour;
-            ExamMinute = examMinutes;
+            ExamMinutes = examMinutes;
             ArrivalHour = arrivalHour;
             ArrivalMinutes = arrivalMinutes;
         }
@@ -35,7 +35,7 @@ namespace OnTimeForExamConsoleMVC.Models
             }
         }
 
-        public int ExamMinute
+        public int ExamMinutes
         {
             get
             {
@@ -77,7 +77,7 @@ namespace OnTimeForExamConsoleMVC.Models
         public string CheckForLateExamArrival()
         {
             int totalArrivalMinutes = ArrivalHour * 60 + ArrivalMinutes;
-            int totalExamMinutes = ExamHour * 60 + ExamMinute;
+            int totalExamMinutes = ExamHour * 60 + ExamMinutes;
 
             int totalTimeDifference = totalExamMinutes - totalArrivalMinutes;
 

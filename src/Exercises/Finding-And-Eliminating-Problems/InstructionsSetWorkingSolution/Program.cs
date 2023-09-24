@@ -38,7 +38,7 @@ namespace InstructionsSetWorkingSolution
                         {
                             int operandOne = int.Parse(codeArgs[1]);
                             int operandTwo = int.Parse(codeArgs[2]);
-                            result = (long) operandOne * operandTwo;
+                            result = (long)operandOne * operandTwo;
                             break;
                         }
                 }
