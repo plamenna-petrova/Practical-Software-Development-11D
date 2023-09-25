@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace UnknownMethod
+namespace UnknownMethodRefactoredCode
 {
-    public class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -50,7 +50,7 @@ namespace UnknownMethod
                     }
                 }
             }
-               
+
             return resultMatrix;
         }
     }
