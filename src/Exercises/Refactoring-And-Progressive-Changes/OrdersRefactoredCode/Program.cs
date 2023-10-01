@@ -60,11 +60,11 @@ namespace OrdersRefactoredCode
             Console.WriteLine(new string('-', 10));
 
             // The most profitable category
-            var mostProfitableCateogry = loadedOrders
+            var mostProfitableCategory = loadedOrders
                 .GroupBy(o => o.ProductID)
                 .Select(ogr => new 
-                { 
-                    CategoryID = loadedProducts.First(p => p.ID == ogr.Key).CategoryID, 
+                {
+                    loadedProducts.First(p => p.ID == ogr.Key).CategoryID, 
                     Price = loadedProducts.First(p => p.ID == ogr.Key).UnitPrice, 
                     Quantity = ogr.Sum(p => p.Quantity) 
                 })
@@ -77,7 +77,7 @@ namespace OrdersRefactoredCode
                 .OrderByDescending(cgr => cgr.TotalQuantity)
                 .First();
 
-            Console.WriteLine("{0}: {1}", mostProfitableCateogry.CategoryName, mostProfitableCateogry.TotalQuantity);
+            Console.WriteLine("{0}: {1}", mostProfitableCategory.CategoryName, mostProfitableCategory.TotalQuantity);
         }
     }
 }

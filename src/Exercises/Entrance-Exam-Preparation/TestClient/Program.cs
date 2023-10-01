@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace TestClient
 {
+    // Entrance Exam Preparation Task #6
+
     public class BankAccount
     {
         private int id;

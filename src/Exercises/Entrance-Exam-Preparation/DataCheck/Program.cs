@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace DataCheck
 {
+    // Entrance Exam Preparation Task #7
+
     public class Person
     {
         private string firstName;

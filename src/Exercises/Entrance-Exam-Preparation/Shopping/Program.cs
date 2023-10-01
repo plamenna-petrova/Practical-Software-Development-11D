@@ -4,6 +4,8 @@ using System.Linq;
 
 namespace Shopping
 {
+    // Entrance Exam Preparation Task #8
+
     public class Person
     {
         private string name;

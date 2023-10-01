@@ -9,95 +9,126 @@ namespace ArraySliderRefactoredCode
     {
         static void Main(string[] args)
         {
-            var input = Console.ReadLine();
+            string numbersInput = Console.ReadLine();
 
-            BigInteger[] jm = Regex.Split(input, "\\s+").Where(n => n != "").Select(n => BigInteger.Parse(n)).ToArray();
+            BigInteger[] positiveIntegersArray = Regex
+                .Split(numbersInput, "\\s+")
+                .Where(n => n != "").Select(n => BigInteger.Parse(n))
+                .ToArray();
 
-            var r = Console.ReadLine();
+            string arraySliderCommand = Console.ReadLine();
 
-            long i = 0;
+            long counter = 0;
 
-            while (r != "stop")
+            while (arraySliderCommand != "stop")
             {
-                var ee = r.Split(' ');
-                var a = long.Parse(ee[0]);
-                var b = ee[1];
-                var c = long.Parse(ee[2]);
-                a = a % jm.Length;
-                i += a;
-                var pos = i % jm.Length;
-                if (pos < 0)
+                string[] arraySliderCommandOperationTokens = arraySliderCommand.Split(' ');
+
+                long shifitingValue = long.Parse(arraySliderCommandOperationTokens[0]);
+                string operation = arraySliderCommandOperationTokens[1];
+                long operandValue = long.Parse(arraySliderCommandOperationTokens[2]);
+
+                shifitingValue %= positiveIntegersArray.Length;
+                counter += shifitingValue;
+
+                long index = counter % positiveIntegersArray.Length;
+
+                if (index < 0)
                 {
-                    pos += jm.Length;
+                    index += positiveIntegersArray.Length;
                 }
-                if (pos >= jm.Length)
+
+                if (index >= positiveIntegersArray.Length)
                 {
-                    pos -= jm.Length;
+                    index -= positiveIntegersArray.Length;
                 }
-                switch (b)
+
+                switch (operation)
                 {
                     case "+":
-                        if ((jm[pos] + c) < 0)
+                        if ((positiveIntegersArray[index] + operandValue) < 0)
                         {
-                            jm[pos] = 0;
+                            positiveIntegersArray[index] = 0;
                         }
-                        else jm[pos] = jm[pos] + c;
+                        else
+                        {
+                            positiveIntegersArray[index] = positiveIntegersArray[index] + operandValue;
+                        }
                         break;
                     case "-":
-                        if (jm[pos] < c)
+                        if (positiveIntegersArray[index] < operandValue)
                         {
-                            jm[pos] = 0;
+                            positiveIntegersArray[index] = 0;
                         }
-                        else jm[pos] = jm[pos] - c;
+                        else
+                        {
+                            positiveIntegersArray[index] = positiveIntegersArray[index] - operandValue;
+                        }
                         break;
                     case "*":
-                        if ((jm[pos] * c) < 0)
+                        if ((positiveIntegersArray[index] * operandValue) < 0)
                         {
-                            jm[pos] = 0;
+                            positiveIntegersArray[index] = 0;
                         }
-                        else jm[pos] = jm[pos] * c;
+                        else
+                        {
+                            positiveIntegersArray[index] = positiveIntegersArray[index] * operandValue;
+                        }
                         break;
                     case "/":
-                        if ((jm[pos] / c) < 0)
+                        if ((positiveIntegersArray[index] / operandValue) < 0)
                         {
-                            jm[pos] = 0;
+                            positiveIntegersArray[index] = 0;
                         }
-                        else jm[pos] = jm[pos] / c;
+                        else
+                        {
+                            positiveIntegersArray[index] = positiveIntegersArray[index] / operandValue;
+                        }
                         break;
                     case "&":
-                        if ((jm[pos] & c) < 0)
+                        if ((positiveIntegersArray[index] & operandValue) < 0)
                         {
-                            jm[pos] = 0;
+                            positiveIntegersArray[index] = 0;
                         }
-                        else jm[pos] = jm[pos] & c;
+                        else
+                        {
+                            positiveIntegersArray[index] = positiveIntegersArray[index] & operandValue;
+                        }
                         break;
                     case "|":
-                        if ((jm[pos] | c) < 0)
+                        if ((positiveIntegersArray[index] | operandValue) < 0)
                         {
-                            jm[pos] = 0;
+                            positiveIntegersArray[index] = 0;
                         }
-                        else jm[pos] = jm[pos] | c;
+                        else
+                        {
+                            positiveIntegersArray[index] = positiveIntegersArray[index] | operandValue;
+                        }
                         break;
                     case "^":
-                        if ((jm[pos] ^ c) < 0)
+                        if ((positiveIntegersArray[index] ^ operandValue) < 0)
                         {
-                            jm[pos] = 0;
+                            positiveIntegersArray[index] = 0;
                         }
-                        else jm[pos] = jm[pos] ^ c;
+                        else
+                        {
+                            positiveIntegersArray[index] = positiveIntegersArray[index] ^ operandValue;
+                        }
                         break;
                 }
-                r = Console.ReadLine();
+
+                arraySliderCommand = Console.ReadLine();
             }
 
-            for (int qq = 0; qq < jm.Length; qq++)
+            for (int j = 0; j < positiveIntegersArray.Length; j++)
             {
-                if (jm[qq] < 0)
+                if (positiveIntegersArray[j] < 0)
                 {
-                    jm[qq] = 0;
+                    positiveIntegersArray[j] = 0;
                 }
             }
 
-            Console.WriteLine("[" + string.Join(", ", jm) + "]");
+            Console.WriteLine("[" + string.Join(", ", positiveIntegersArray) + "]");
         }
     }
 }
