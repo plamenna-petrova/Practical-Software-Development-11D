@@ -97,13 +97,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrdersBadCode", "Exercises\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrdersRefactoredCode", "Exercises\Refactoring-And-Progressive-Changes\OrdersRefactoredCode\OrdersRefactoredCode.csproj", "{724F3724-12CA-435D-BC57-68CA7B4228ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTrips", "Exercises\Entrance-Exam-Preparation\CarTrips\CarTrips.csproj", "{8700E5EE-115C-4E41-A989-A18FC1AB32E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTrips", "Exercises\Entrance-Exam-Preparation\CarTrips\CarTrips.csproj", "{8700E5EE-115C-4E41-A989-A18FC1AB32E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banker", "Exercises\Entrance-Exam-Preparation\Banker\Banker.csproj", "{362FCF7D-FEC1-4985-BD9D-142242CA5CB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banker", "Exercises\Entrance-Exam-Preparation\Banker\Banker.csproj", "{362FCF7D-FEC1-4985-BD9D-142242CA5CB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinesweeperBadCode", "Exercises\Refactoring-And-Progressive-Changes\MinesweeperBadCode\MinesweeperBadCode.csproj", "{57772589-8EBB-4674-9A5C-F7BA1B226E55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinesweeperBadCode", "Exercises\Refactoring-And-Progressive-Changes\MinesweeperBadCode\MinesweeperBadCode.csproj", "{57772589-8EBB-4674-9A5C-F7BA1B226E55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinesweeperRefactoredCode", "Exercises\Refactoring-And-Progressive-Changes\MinesweeperRefactoredCode\MinesweeperRefactoredCode.csproj", "{CE28BC13-D1F0-40FA-BD37-0C9D3DCA37ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinesweeperRefactoredCode", "Exercises\Refactoring-And-Progressive-Changes\MinesweeperRefactoredCode\MinesweeperRefactoredCode.csproj", "{CE28BC13-D1F0-40FA-BD37-0C9D3DCA37ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoloSnakeBadCode", "Exercises\Refactoring-And-Progressive-Changes\YoloSnakeBadCode\YoloSnakeBadCode.csproj", "{A558EEA3-8F5E-41E5-A5BF-4C9D6B89E207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoloSnakeRefactoredCode", "Exercises\Refactoring-And-Progressive-Changes\YoloSnakeRefactoredCode\YoloSnakeRefactoredCode.csproj", "{2A4A5E99-63B3-4904-BDC3-0EA6560D251D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -287,6 +291,14 @@ Global
 		{CE28BC13-D1F0-40FA-BD37-0C9D3DCA37ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE28BC13-D1F0-40FA-BD37-0C9D3DCA37ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE28BC13-D1F0-40FA-BD37-0C9D3DCA37ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A558EEA3-8F5E-41E5-A5BF-4C9D6B89E207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A558EEA3-8F5E-41E5-A5BF-4C9D6B89E207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A558EEA3-8F5E-41E5-A5BF-4C9D6B89E207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A558EEA3-8F5E-41E5-A5BF-4C9D6B89E207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A4A5E99-63B3-4904-BDC3-0EA6560D251D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A4A5E99-63B3-4904-BDC3-0EA6560D251D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A4A5E99-63B3-4904-BDC3-0EA6560D251D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A4A5E99-63B3-4904-BDC3-0EA6560D251D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -338,6 +350,8 @@ Global
 		{362FCF7D-FEC1-4985-BD9D-142242CA5CB9} = {CF9EBA78-7176-431B-88C2-DA5D41514A0B}
 		{57772589-8EBB-4674-9A5C-F7BA1B226E55} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
 		{CE28BC13-D1F0-40FA-BD37-0C9D3DCA37ED} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{A558EEA3-8F5E-41E5-A5BF-4C9D6B89E207} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{2A4A5E99-63B3-4904-BDC3-0EA6560D251D} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}

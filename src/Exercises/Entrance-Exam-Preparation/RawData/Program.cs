@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace RawData
 {
-    // Exercise: Constructors Task #5
+    // Entrance Exam Preparation Task #5
 
     public class Car
     {
