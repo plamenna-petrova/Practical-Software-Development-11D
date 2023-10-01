@@ -1,4 +1,6 @@
 ﻿using System;
+using YoloSnake.Core;
+using YoloSnake.Models;
 
 namespace YoloSnakeDocumentedCode
 {
