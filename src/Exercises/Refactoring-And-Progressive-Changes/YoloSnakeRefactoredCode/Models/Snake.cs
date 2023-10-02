@@ -65,9 +65,8 @@ namespace YoloSnake.Models
                 default:
                     throw new ArgumentException("Unknown direction");
             }
-
-
         }
+
         public void Move()
         {
             this.positions.RemoveLast();

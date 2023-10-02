@@ -53,6 +53,21 @@ namespace CarTrips
             set { travelledDistance = value; }
         }
 
+        public void CalculateFuelExpensesForDistance(int distanceToTravel)
+        {
+            double calculatedFuelExpensesForDistance = OneKMFuelExpenses * distanceToTravel;
+
+            if (FuelQuantity - calculatedFuelExpensesForDistance >= 0)
+            {
+                FuelQuantity -= calculatedFuelExpensesForDistance;
+                TravelledDistance += distanceToTravel;
+            }
+            else
+            {
+                Console.WriteLine("Insufficient fuel for the drive");
+            }
+        }
+
         public override string ToString()
         {
             return $"{Model} {FuelQuantity:F2} {TravelledDistance}";
@@ -90,17 +105,7 @@ namespace CarTrips
                             if (travellingCar != null)
                             {
                                 int distanceToTravel = int.Parse(travellingCarInfo[2]);
-                                double calculatedFuelExpensesForDistance = travellingCar.OneKMFuelExpenses * distanceToTravel;
-
-                                if (travellingCar.FuelQuantity - calculatedFuelExpensesForDistance >= 0)
-                                {
-                                    travellingCar.FuelQuantity -= calculatedFuelExpensesForDistance;
-                                    travellingCar.TravelledDistance += distanceToTravel;
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Insufficient fuel for the drive");
-                                }
+                                travellingCar.CalculateFuelExpensesForDistance(distanceToTravel);
                             }
                             break;
                         case "End":

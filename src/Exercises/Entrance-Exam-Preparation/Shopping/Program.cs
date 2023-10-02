@@ -107,7 +107,7 @@ namespace Shopping
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new Exception("Name cannot be empty");
+                    throw new ArgumentException("Name cannot be empty");
                 }
 
                 this.name = value;
@@ -189,6 +189,17 @@ namespace Shopping
                 {
                     Console.WriteLine($"{buyer.Name} - {string.Join(", ", buyer.Products.Select(p => p.Name).ToArray())}");
                 }
+
+                // alternative
+
+                //if (buyer.Products.Any())
+                //{
+                //    Console.WriteLine($"{buyer.Name} - {string.Join(", ", buyer.Products.Select(p => p.Name).ToArray())}");
+                //}
+                //else
+                //{
+                //    Console.WriteLine($"{buyer.Name} - Nothing bought");
+                //}
             }
         }
     }

@@ -65,7 +65,7 @@ public class Program
 
         int[] interator = new int[5];
 
-        for (; ; )
+        for (;;)
         {
             if (start <= GetWordsWeight(words) && GetWordsWeight(words) <= end)
             {
@@ -148,6 +148,5 @@ public class Program
         {
             Console.WriteLine("No");
         }
-
     }
 }

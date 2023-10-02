@@ -13,7 +13,7 @@ namespace ArraySliderRefactoredCode
 
             BigInteger[] positiveIntegersArray = Regex
                 .Split(numbersInput, "\\s+")
-                .Where(n => n != "").Select(n => BigInteger.Parse(n))
+                .Where(n => n != string.Empty).Select(n => BigInteger.Parse(n))
                 .ToArray();
 
             string arraySliderCommand = Console.ReadLine();

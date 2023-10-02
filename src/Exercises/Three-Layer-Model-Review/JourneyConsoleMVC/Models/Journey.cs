@@ -52,7 +52,7 @@ namespace JourneyConsoleMVC.Models
 
         public string GetJourneyDetails()
         {
-            string travellingDestination = default;
+            string travellingDestination;
             string restingPlace = default;
             double restingPlacePrice = default;
 
