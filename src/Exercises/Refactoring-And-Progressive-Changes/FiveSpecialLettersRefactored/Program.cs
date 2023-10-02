@@ -48,10 +48,17 @@ public class Program
         for (int i = 0; i < word.Count; i++)
         {
             output += (i + 1) * GetLetterWeight(word[i]);
-
         }
 
         return output;
+    }
+
+    private static void ApppendCharactersToWordsArray(char[] wordCharactersArray, int[] iteratorsValuesArray)
+    {
+        for (int c = 0; c < wordCharactersArray.Length; c++)
+        {
+            wordCharactersArray[c] = (char)('a' + iteratorsValuesArray[c]); 
+        }
     }
 
     private static void Main()
@@ -63,63 +70,25 @@ public class Program
 
         List<string> output = new List<string>();
 
-        int[] interator = new int[5];
-
-        for (;;)
+        for (int i = 0; i < 5; i++)
         {
-            if (start <= GetWordsWeight(words) && GetWordsWeight(words) <= end)
+            for (int j = 0; j < 5; j++)
             {
-                output.Add(new string(words));
-            }
-
-            if (interator[0] < 5)
-            {
-                words[0] = (char)('a' + interator[0]);
-                interator[0]++;
-            }
-            else
-            {
-                if (interator[1] < 5)
+                for (int k = 0; k < 5; k++)
                 {
-                    words[1] = (char)('a' + interator[1]);
-                    interator[1]++;
-                }
-                else
-                {
-                    if (interator[2] < 5)
+                    for (int p = 0; p < 5; p++)
                     {
-                        words[2] = (char)('a' + interator[2]);
-                        interator[2]++;
-                    }
-                    else
-                    {
-                        if (interator[3] < 5)
+                        for (int q = 0; q < 5; q++)
                         {
-                            words[3] = (char)('a' + interator[3]);
-                            interator[3]++;
-                        }
-                        else
-                        {
-                            if (interator[4] < 5)
-                            {
-                                words[4] = (char)('a' + interator[4]);
-                                interator[4]++;
-                            }
-                            else
-                            {
-                                break;
-                            }
+                            ApppendCharactersToWordsArray(words, new int[] { i, j, k, p, q });
 
-                            interator[3] = 0;
+                            if (start <= GetWordsWeight(words) && GetWordsWeight(words) <= end)
+                            {
+                                output.Add(new string(words));
+                            }
                         }
-
-                        interator[2] = 0;
                     }
-
-                    interator[1] = 0;
                 }
-
-                interator[0] = 0;
             }
         }
 
