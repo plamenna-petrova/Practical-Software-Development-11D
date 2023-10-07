@@ -155,6 +155,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangePreventersRefactored"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringChangesBetter", "Exercises\Refactoring-And-Progressive-Changes\RefactoringChangesBetter\RefactoringChangesBetter.csproj", "{21C033FD-B31A-4835-BCD3-591AF9B3486F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectOrientedAbusers", "Exercises\Refactoring-And-Progressive-Changes\ObjectOrientedAbusers\ObjectOrientedAbusers.csproj", "{2C79F3E8-64B2-4B09-9F81-D0869FF89C52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -437,6 +439,10 @@ Global
 		{21C033FD-B31A-4835-BCD3-591AF9B3486F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21C033FD-B31A-4835-BCD3-591AF9B3486F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21C033FD-B31A-4835-BCD3-591AF9B3486F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C79F3E8-64B2-4B09-9F81-D0869FF89C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C79F3E8-64B2-4B09-9F81-D0869FF89C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C79F3E8-64B2-4B09-9F81-D0869FF89C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C79F3E8-64B2-4B09-9F81-D0869FF89C52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -513,6 +519,7 @@ Global
 		{BCB3AE63-9EBD-4051-821B-C90472CB7309} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
 		{2F2FF8B3-E0C9-4D17-95C7-9B859972E8A1} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
 		{21C033FD-B31A-4835-BCD3-591AF9B3486F} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{2C79F3E8-64B2-4B09-9F81-D0869FF89C52} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
