@@ -23,6 +23,7 @@ namespace CohesionAndCoupling
             VolumeCalculationUtils.Width = 3;
             VolumeCalculationUtils.Height = 4;
             VolumeCalculationUtils.Depth = 5;
+
             Console.WriteLine("Volume = {0:f2}", VolumeCalculationUtils.CalculateVolume());
 
             Console.WriteLine("Diagonal XYZ = {0:f2}", DistanceCalculationUtils.CalculateDiagonalXYZ());

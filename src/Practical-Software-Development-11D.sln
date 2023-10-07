@@ -123,21 +123,37 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiveSpecialLettersBadCode",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiveSpecialLettersRefactored", "Exercises\Refactoring-And-Progressive-Changes\FiveSpecialLettersRefactored\FiveSpecialLettersRefactored.csproj", "{173D9214-27AD-4FA3-A912-1BBA30916B6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighQualityMethodsBadCode", "Exercises\Refactoring-And-Progressive-Changes\HighQualityMethodsBadCode\HighQualityMethodsBadCode.csproj", "{673FEDBD-4268-495F-8E4D-0182C3BE89BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighQualityMethodsBadCode", "Exercises\Refactoring-And-Progressive-Changes\HighQualityMethodsBadCode\HighQualityMethodsBadCode.csproj", "{673FEDBD-4268-495F-8E4D-0182C3BE89BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighQualityMethodsRefactored", "Exercises\Refactoring-And-Progressive-Changes\HighQualityMethodsRefactored\HighQualityMethodsRefactored.csproj", "{2E6ED5C9-1EB7-444D-9D25-0C296B471EF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighQualityMethodsRefactored", "Exercises\Refactoring-And-Progressive-Changes\HighQualityMethodsRefactored\HighQualityMethodsRefactored.csproj", "{2E6ED5C9-1EB7-444D-9D25-0C296B471EF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractionBadCode", "Exercises\Refactoring-And-Progressive-Changes\AbstractionBadCode\AbstractionBadCode.csproj", "{872B6C48-8AE2-4857-BC8D-DF44855BBDE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractionBadCode", "Exercises\Refactoring-And-Progressive-Changes\AbstractionBadCode\AbstractionBadCode.csproj", "{872B6C48-8AE2-4857-BC8D-DF44855BBDE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractionRefactoredCode", "Exercises\Refactoring-And-Progressive-Changes\AbstractionRefactoredCode\AbstractionRefactoredCode.csproj", "{FDF0A57F-1325-4D10-9E02-71FD625CA9CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractionRefactoredCode", "Exercises\Refactoring-And-Progressive-Changes\AbstractionRefactoredCode\AbstractionRefactoredCode.csproj", "{FDF0A57F-1325-4D10-9E02-71FD625CA9CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CohesionAndCouplingBadCode", "Exercises\Refactoring-And-Progressive-Changes\CohesionAndCouplingBadCode\CohesionAndCouplingBadCode.csproj", "{741E90C8-17DF-4831-88A3-22E291E8F032}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CohesionAndCouplingBadCode", "Exercises\Refactoring-And-Progressive-Changes\CohesionAndCouplingBadCode\CohesionAndCouplingBadCode.csproj", "{741E90C8-17DF-4831-88A3-22E291E8F032}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CohesionAndCouplingRefactored", "Exercises\Refactoring-And-Progressive-Changes\CohesionAndCouplingRefactored\CohesionAndCouplingRefactored.csproj", "{37DA8E04-896F-4D75-844D-DAF9C6636976}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CohesionAndCouplingRefactored", "Exercises\Refactoring-And-Progressive-Changes\CohesionAndCouplingRefactored\CohesionAndCouplingRefactored.csproj", "{37DA8E04-896F-4D75-844D-DAF9C6636976}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceAndPolymorphismBad", "Exercises\Refactoring-And-Progressive-Changes\InheritanceAndPolymorphismBad\InheritanceAndPolymorphismBad.csproj", "{B030FAB7-9E5B-42D3-ABBA-0E1DE63995BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InheritanceAndPolymorphismBad", "Exercises\Refactoring-And-Progressive-Changes\InheritanceAndPolymorphismBad\InheritanceAndPolymorphismBad.csproj", "{B030FAB7-9E5B-42D3-ABBA-0E1DE63995BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceAndPolymorphismGood", "Exercises\Refactoring-And-Progressive-Changes\InheritanceAndPolymorphismGood\InheritanceAndPolymorphismGood.csproj", "{273E3D75-FC8E-4A7C-A3FC-31E097E40C5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InheritanceAndPolymorphismGood", "Exercises\Refactoring-And-Progressive-Changes\InheritanceAndPolymorphismGood\InheritanceAndPolymorphismGood.csproj", "{273E3D75-FC8E-4A7C-A3FC-31E097E40C5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotatingWalkInMatrixBadCode", "Exercises\Refactoring-And-Progressive-Changes\RotatingWalkInMatrixBadCode\RotatingWalkInMatrixBadCode.csproj", "{DB7F9B5B-EDAD-4AE3-9A37-9FDFA6B1233B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotatingWalkInMatrixRefactored", "Exercises\Refactoring-And-Progressive-Changes\RotatingWalkInMatrixRefactored\RotatingWalkInMatrixRefactored.csproj", "{A73483EB-EF8C-4799-BB7E-473C36EA52F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloaters", "Exercises\Refactoring-And-Progressive-Changes\Bloaters\Bloaters.csproj", "{BE7EF085-F6FF-49E0-8D6D-8FF7151D8197}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangePreventers", "Exercises\Refactoring-And-Progressive-Changes\ChangePreventers\ChangePreventers.csproj", "{CA1D2F42-7D74-4CF5-B8E8-EC385A32EB77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomGenericList", "Exercises\Refactoring-And-Progressive-Changes\CustomGenericList\CustomGenericList.csproj", "{B703C3F7-35F4-4524-81F6-04F69677E4C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringChanges", "Exercises\Refactoring-And-Progressive-Changes\RefactoringChanges\RefactoringChanges.csproj", "{BCB3AE63-9EBD-4051-821B-C90472CB7309}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangePreventersRefactored", "Exercises\Refactoring-And-Progressive-Changes\ChangePreventersRefactored\ChangePreventersRefactored.csproj", "{2F2FF8B3-E0C9-4D17-95C7-9B859972E8A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringChangesBetter", "Exercises\Refactoring-And-Progressive-Changes\RefactoringChangesBetter\RefactoringChangesBetter.csproj", "{21C033FD-B31A-4835-BCD3-591AF9B3486F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -389,6 +405,38 @@ Global
 		{273E3D75-FC8E-4A7C-A3FC-31E097E40C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{273E3D75-FC8E-4A7C-A3FC-31E097E40C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{273E3D75-FC8E-4A7C-A3FC-31E097E40C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB7F9B5B-EDAD-4AE3-9A37-9FDFA6B1233B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB7F9B5B-EDAD-4AE3-9A37-9FDFA6B1233B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB7F9B5B-EDAD-4AE3-9A37-9FDFA6B1233B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB7F9B5B-EDAD-4AE3-9A37-9FDFA6B1233B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A73483EB-EF8C-4799-BB7E-473C36EA52F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A73483EB-EF8C-4799-BB7E-473C36EA52F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A73483EB-EF8C-4799-BB7E-473C36EA52F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A73483EB-EF8C-4799-BB7E-473C36EA52F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE7EF085-F6FF-49E0-8D6D-8FF7151D8197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE7EF085-F6FF-49E0-8D6D-8FF7151D8197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE7EF085-F6FF-49E0-8D6D-8FF7151D8197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE7EF085-F6FF-49E0-8D6D-8FF7151D8197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA1D2F42-7D74-4CF5-B8E8-EC385A32EB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1D2F42-7D74-4CF5-B8E8-EC385A32EB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1D2F42-7D74-4CF5-B8E8-EC385A32EB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1D2F42-7D74-4CF5-B8E8-EC385A32EB77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B703C3F7-35F4-4524-81F6-04F69677E4C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B703C3F7-35F4-4524-81F6-04F69677E4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B703C3F7-35F4-4524-81F6-04F69677E4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B703C3F7-35F4-4524-81F6-04F69677E4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCB3AE63-9EBD-4051-821B-C90472CB7309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB3AE63-9EBD-4051-821B-C90472CB7309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB3AE63-9EBD-4051-821B-C90472CB7309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB3AE63-9EBD-4051-821B-C90472CB7309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F2FF8B3-E0C9-4D17-95C7-9B859972E8A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F2FF8B3-E0C9-4D17-95C7-9B859972E8A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F2FF8B3-E0C9-4D17-95C7-9B859972E8A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F2FF8B3-E0C9-4D17-95C7-9B859972E8A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C033FD-B31A-4835-BCD3-591AF9B3486F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C033FD-B31A-4835-BCD3-591AF9B3486F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C033FD-B31A-4835-BCD3-591AF9B3486F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C033FD-B31A-4835-BCD3-591AF9B3486F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -457,6 +505,14 @@ Global
 		{37DA8E04-896F-4D75-844D-DAF9C6636976} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
 		{B030FAB7-9E5B-42D3-ABBA-0E1DE63995BE} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
 		{273E3D75-FC8E-4A7C-A3FC-31E097E40C5D} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{DB7F9B5B-EDAD-4AE3-9A37-9FDFA6B1233B} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{A73483EB-EF8C-4799-BB7E-473C36EA52F1} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{BE7EF085-F6FF-49E0-8D6D-8FF7151D8197} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{CA1D2F42-7D74-4CF5-B8E8-EC385A32EB77} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{B703C3F7-35F4-4524-81F6-04F69677E4C9} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{BCB3AE63-9EBD-4051-821B-C90472CB7309} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{2F2FF8B3-E0C9-4D17-95C7-9B859972E8A1} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{21C033FD-B31A-4835-BCD3-591AF9B3486F} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
