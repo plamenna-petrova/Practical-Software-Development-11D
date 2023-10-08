@@ -139,23 +139,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InheritanceAndPolymorphismB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InheritanceAndPolymorphismGood", "Exercises\Refactoring-And-Progressive-Changes\InheritanceAndPolymorphismGood\InheritanceAndPolymorphismGood.csproj", "{273E3D75-FC8E-4A7C-A3FC-31E097E40C5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotatingWalkInMatrixBadCode", "Exercises\Refactoring-And-Progressive-Changes\RotatingWalkInMatrixBadCode\RotatingWalkInMatrixBadCode.csproj", "{DB7F9B5B-EDAD-4AE3-9A37-9FDFA6B1233B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RotatingWalkInMatrixBadCode", "Exercises\Refactoring-And-Progressive-Changes\RotatingWalkInMatrixBadCode\RotatingWalkInMatrixBadCode.csproj", "{DB7F9B5B-EDAD-4AE3-9A37-9FDFA6B1233B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotatingWalkInMatrixRefactored", "Exercises\Refactoring-And-Progressive-Changes\RotatingWalkInMatrixRefactored\RotatingWalkInMatrixRefactored.csproj", "{A73483EB-EF8C-4799-BB7E-473C36EA52F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RotatingWalkInMatrixRefactored", "Exercises\Refactoring-And-Progressive-Changes\RotatingWalkInMatrixRefactored\RotatingWalkInMatrixRefactored.csproj", "{A73483EB-EF8C-4799-BB7E-473C36EA52F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloaters", "Exercises\Refactoring-And-Progressive-Changes\Bloaters\Bloaters.csproj", "{BE7EF085-F6FF-49E0-8D6D-8FF7151D8197}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bloaters", "Exercises\Refactoring-And-Progressive-Changes\Bloaters\Bloaters.csproj", "{BE7EF085-F6FF-49E0-8D6D-8FF7151D8197}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangePreventers", "Exercises\Refactoring-And-Progressive-Changes\ChangePreventers\ChangePreventers.csproj", "{CA1D2F42-7D74-4CF5-B8E8-EC385A32EB77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChangePreventers", "Exercises\Refactoring-And-Progressive-Changes\ChangePreventers\ChangePreventers.csproj", "{CA1D2F42-7D74-4CF5-B8E8-EC385A32EB77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomGenericList", "Exercises\Refactoring-And-Progressive-Changes\CustomGenericList\CustomGenericList.csproj", "{B703C3F7-35F4-4524-81F6-04F69677E4C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomGenericList", "Exercises\Refactoring-And-Progressive-Changes\CustomGenericList\CustomGenericList.csproj", "{B703C3F7-35F4-4524-81F6-04F69677E4C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringChanges", "Exercises\Refactoring-And-Progressive-Changes\RefactoringChanges\RefactoringChanges.csproj", "{BCB3AE63-9EBD-4051-821B-C90472CB7309}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefactoringChanges", "Exercises\Refactoring-And-Progressive-Changes\RefactoringChanges\RefactoringChanges.csproj", "{BCB3AE63-9EBD-4051-821B-C90472CB7309}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangePreventersRefactored", "Exercises\Refactoring-And-Progressive-Changes\ChangePreventersRefactored\ChangePreventersRefactored.csproj", "{2F2FF8B3-E0C9-4D17-95C7-9B859972E8A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChangePreventersRefactored", "Exercises\Refactoring-And-Progressive-Changes\ChangePreventersRefactored\ChangePreventersRefactored.csproj", "{2F2FF8B3-E0C9-4D17-95C7-9B859972E8A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringChangesBetter", "Exercises\Refactoring-And-Progressive-Changes\RefactoringChangesBetter\RefactoringChangesBetter.csproj", "{21C033FD-B31A-4835-BCD3-591AF9B3486F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefactoringChangesBetter", "Exercises\Refactoring-And-Progressive-Changes\RefactoringChangesBetter\RefactoringChangesBetter.csproj", "{21C033FD-B31A-4835-BCD3-591AF9B3486F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectOrientedAbusers", "Exercises\Refactoring-And-Progressive-Changes\ObjectOrientedAbusers\ObjectOrientedAbusers.csproj", "{2C79F3E8-64B2-4B09-9F81-D0869FF89C52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectOrientedAbusers", "Exercises\Refactoring-And-Progressive-Changes\ObjectOrientedAbusers\ObjectOrientedAbusers.csproj", "{2C79F3E8-64B2-4B09-9F81-D0869FF89C52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practical-Exams", "Practical-Exams", "{407EC89C-FEB1-4F4C-9703-477BB7B389C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CargoTransportation", "Exercises\Practical-Exams\CargoTransportation\CargoTransportation.csproj", "{F03D19C7-EA74-4523-9651-EECA881BB017}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -443,6 +447,10 @@ Global
 		{2C79F3E8-64B2-4B09-9F81-D0869FF89C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C79F3E8-64B2-4B09-9F81-D0869FF89C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C79F3E8-64B2-4B09-9F81-D0869FF89C52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F03D19C7-EA74-4523-9651-EECA881BB017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F03D19C7-EA74-4523-9651-EECA881BB017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F03D19C7-EA74-4523-9651-EECA881BB017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F03D19C7-EA74-4523-9651-EECA881BB017}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -520,6 +528,7 @@ Global
 		{2F2FF8B3-E0C9-4D17-95C7-9B859972E8A1} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
 		{21C033FD-B31A-4835-BCD3-591AF9B3486F} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
 		{2C79F3E8-64B2-4B09-9F81-D0869FF89C52} = {40CC68CA-C1E0-4CCE-8330-1A77CDA87F35}
+		{F03D19C7-EA74-4523-9651-EECA881BB017} = {407EC89C-FEB1-4F4C-9703-477BB7B389C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
