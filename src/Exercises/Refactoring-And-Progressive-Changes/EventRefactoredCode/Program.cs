@@ -238,3 +238,14 @@
 //        return date;
 //    }
 //}
+
+namespace EventRefactoredCode
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+}

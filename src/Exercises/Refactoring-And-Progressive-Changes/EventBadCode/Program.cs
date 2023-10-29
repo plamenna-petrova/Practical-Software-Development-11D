@@ -235,3 +235,14 @@
 //            1, 20));
 //        return date;
 //    }
+
+namespace EventBadCode
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+}

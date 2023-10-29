@@ -25,7 +25,7 @@ namespace CargoTransportation
             {
                 return this.name;
             }
-
+                   
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
