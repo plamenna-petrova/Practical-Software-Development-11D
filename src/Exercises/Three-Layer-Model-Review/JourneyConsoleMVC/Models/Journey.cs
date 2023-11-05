@@ -21,7 +21,7 @@ namespace JourneyConsoleMVC.Models
         public Journey(double travellingBudget, string travellingSeason)
         {
             TravellingBudget = travellingBudget;
-            TravelingSeason = travellingSeason;
+            TravellingSeason = travellingSeason;
         }
 
         public double TravellingBudget
@@ -37,7 +37,7 @@ namespace JourneyConsoleMVC.Models
             }
         }
 
-        public string TravelingSeason
+        public string TravellingSeason
         {
             get
             {
@@ -60,7 +60,7 @@ namespace JourneyConsoleMVC.Models
             {
                 travellingDestination = "Bulgaria";
 
-                switch (travellingSeason)
+                switch (TravellingSeason)
                 {
                     case Summer:
                         restingPlace = Camp;
@@ -76,7 +76,7 @@ namespace JourneyConsoleMVC.Models
             {
                 travellingDestination = "Balkans";
 
-                switch (travellingSeason)
+                switch (TravellingSeason)
                 {
                     case Summer:
                         restingPlace = Camp;
