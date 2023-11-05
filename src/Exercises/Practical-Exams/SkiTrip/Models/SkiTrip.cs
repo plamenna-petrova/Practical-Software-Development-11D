@@ -60,9 +60,7 @@ namespace SkiTripConsoleMVC.Models
 
             set 
             {
-                if (value != ROOM_FOR_ONE_PERSON &&
-                    value != APARTMENT &&
-                    value != PRESIDENT_APARTMENT) 
+                if (value != ROOM_FOR_ONE_PERSON && value != APARTMENT && value != PRESIDENT_APARTMENT) 
                 {
                     throw new ArgumentException("Invalid accomodation type");
                 }
