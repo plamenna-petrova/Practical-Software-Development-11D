@@ -11,7 +11,7 @@ namespace SkiTripConsoleMVC.Views
 
         public int StayDays { get; set; }
 
-        public string AccomodationType { get; set; }
+        public string AccommodationType { get; set; }
 
         public string Review { get; set; }
 
@@ -25,7 +25,7 @@ namespace SkiTripConsoleMVC.Views
         private void GetValues()
         {
             StayDays = int.Parse(Console.ReadLine());
-            AccomodationType = Console.ReadLine();
+            AccommodationType = Console.ReadLine();
             Review = Console.ReadLine();
         }
     }

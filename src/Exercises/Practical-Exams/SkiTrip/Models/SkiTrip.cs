@@ -22,14 +22,14 @@ namespace SkiTripConsoleMVC.Models
 
         private int stayDays;
 
-        private string accomodationType;
+        private string accommodationType;
 
         private string review;
 
-        public SkiTrip(int stayDays, string accomodationType, string review)
+        public SkiTrip(int stayDays, string accommodationType, string review)
         {
             StayDays = stayDays;
-            AccomodationType = accomodationType;
+            AccommodationType = accommodationType;
             Review = review;
         }
 
@@ -51,21 +51,21 @@ namespace SkiTripConsoleMVC.Models
             }
         }
 
-        public string AccomodationType
+        public string AccommodationType
         {
             get
             {
-                return accomodationType;
+                return accommodationType;
             }
 
             set 
             {
-                if (value != ROOM_FOR_ONE_PERSON && value != APARTMENT && value != PRESIDENT_APARTMENT) 
+                if (value != ROOM_FOR_ONE_PERSON || value != APARTMENT || value != PRESIDENT_APARTMENT) 
                 {
                     throw new ArgumentException("Invalid accomodation type");
                 }
 
-                accomodationType = value; 
+                accommodationType = value; 
             }
         }
 
@@ -78,7 +78,7 @@ namespace SkiTripConsoleMVC.Models
 
             set
             {
-                if (value != POSITIVE && value != NEGATIVE)
+                if (value != POSITIVE || value != NEGATIVE)
                 {
                     throw new ArgumentNullException("Invalid review");
                 }
@@ -93,7 +93,7 @@ namespace SkiTripConsoleMVC.Models
 
             double hotelStayPrice = overnightStays * ROOM_FOR_ONE_PERSON_OVERNIGHT_STAY_PRICE;
 
-            switch (AccomodationType)
+            switch (AccommodationType)
             {
                 case APARTMENT:
                     hotelStayPrice = overnightStays * APARTMENT_OVERNIGHT_STAY_PRICE;

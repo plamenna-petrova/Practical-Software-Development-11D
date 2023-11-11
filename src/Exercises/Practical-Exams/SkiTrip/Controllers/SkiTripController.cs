@@ -12,7 +12,7 @@ namespace SkiTripConsoleMVC.Controllers
         public SkiTripController()
         {
             display = new Display();
-            skiTrip = new SkiTrip(display.StayDays, display.AccomodationType, display.Review);
+            skiTrip = new SkiTrip(display.StayDays, display.AccommodationType, display.Review);
             display.HotelStayPrice = skiTrip.GetHotelStayPrice();
             display.ShowHotelStayFormattedPrice();
         }
