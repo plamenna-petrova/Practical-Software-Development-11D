@@ -8,12 +8,12 @@ namespace Division.Example
     {
         public int Divide(int x, int y)
         {
-            if (y != 0)
+            if (y == 0)
             {
-                return x / y;
+                throw new InvalidOperationException("Cannot divide by zero");
             }
 
-            return 0;
+            return x / y;
         }
     }
 }
