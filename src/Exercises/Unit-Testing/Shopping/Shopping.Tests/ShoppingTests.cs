@@ -55,7 +55,7 @@ namespace Shopping.Tests
 
             Assert.That(
                buyers[0].Products.Count().Equals(1),
-               "The second buyer 'Pesho' should have exactly one item in shopping bag"
+               "The second buyer 'Pesho' should have exactly one item in the shopping bag"
             );
         }
 
@@ -105,7 +105,7 @@ namespace Shopping.Tests
 
             Assert.That(
                 buyers[1].Products.Count().Equals(2),
-                "The second buyer 'Gosho' should have exactly two items in shopping bag"
+                "The second buyer 'Gosho' should have exactly two items in the shopping bag"
             );
         }
 
@@ -152,7 +152,7 @@ namespace Shopping.Tests
 
             Assert.That(
                 buyers.Count().Equals(1),
-                "There should be only one one buyer"
+                "There should be only one buyer"
             );
         }
 
@@ -174,16 +174,24 @@ namespace Shopping.Tests
 
             Assert.That(
                 !buyers.First().Products.Any(),
-                "The first only buyer shouldn't buy anything"
+                "The first and only buyer shouldn't buy anything"
             );
         }
 
         [Test]
-        public void Test_PersonShoppingMoney_CannoyBeNegative()
+        public void Test_PersonShoppingMoney_CannotBeNegative()
         {
             var argumentException = Assert.Throws<ArgumentException>(() => ConfigureShoppingCommandsLists("Jeko=-3", "Chushki=1;"));
 
             Assert.That(argumentException.Message, Is.EqualTo("Money cannot be negative"));
+        }
+
+        [Test]
+        public void Test_PersonName_CannotBeEmpty()
+        {
+            var argumentException = Assert.Throws<ArgumentException>(() => ConfigureShoppingCommandsLists("=2", "Milk=1;"));
+
+            Assert.That(argumentException.Message, Is.EqualTo("Name cannot be empty"));
         }
 
         private void DoTheShopping(List<string> shoppingCommands, List<Person> buyers, List<Product> products)
