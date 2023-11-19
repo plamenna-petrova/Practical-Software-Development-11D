@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JourneyConsoleMVC.Models
+namespace Skeleton.Models
 {
-    public class Journey
+    public class JourneyInfo
     {
         private const string Summer = "summer";
 
@@ -18,7 +18,7 @@ namespace JourneyConsoleMVC.Models
 
         private string travellingSeason;
 
-        public Journey(double travellingBudget, string travellingSeason)
+        public JourneyInfo(double travellingBudget, string travellingSeason)
         {
             TravellingBudget = travellingBudget;
             TravellingSeason = travellingSeason;
@@ -30,7 +30,7 @@ namespace JourneyConsoleMVC.Models
             {
                 return travellingBudget;
             }
-            
+
             set
             {
                 if (value < 10 || value > 5000)
