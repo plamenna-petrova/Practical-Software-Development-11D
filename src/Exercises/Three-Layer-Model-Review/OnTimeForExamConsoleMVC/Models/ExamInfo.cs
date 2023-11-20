@@ -59,7 +59,7 @@ namespace OnTimeForExamConsoleMVC.Models
             {
                 arrivalHour = value;
             }
-        }
+        } 
 
         public int ArrivalMinutes
         {
