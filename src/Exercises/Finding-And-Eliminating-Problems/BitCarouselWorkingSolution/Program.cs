@@ -16,7 +16,7 @@ namespace BitCarouselWorkingSolution
                 switch (direction)
                 {
                     case "right":
-                        int rightmostBit = number & 1;
+                        int rightmostBit = number & 1; 
                         number >>= 1;
                         number |= (byte)(rightmostBit << 5);
                         number &= 63;
