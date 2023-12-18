@@ -12,10 +12,8 @@ namespace Shopping.Tests
         [Test]
         public void Test_FirstBuyer_HasBoughtBread()
         {
-            var shoppingCommandsLists = ConfigureShoppingCommandsLists("Pesho=11;Gosho=4", "Bread=10;Milk=2;");
-
-            var buyers = shoppingCommandsLists.Item1;
-            var products = shoppingCommandsLists.Item2;
+            var buyers = ConfigureBuyersList("Pesho=11;Gosho=4");
+            var products = ConfigureProductsList("Bread=10;Milk=2;");
 
             List<string> shoppingCommands = new List<string>
             {
@@ -37,10 +35,8 @@ namespace Shopping.Tests
         [Test]
         public void Test_FirstBuyer_HasExactlyOneProductInShoppingBag()
         {
-            var shoppingCommandsLists = ConfigureShoppingCommandsLists("Pesho=11;Gosho=4", "Bread=10;Milk=2;");
-
-            var buyers = shoppingCommandsLists.Item1;
-            var products = shoppingCommandsLists.Item2;
+            var buyers = ConfigureBuyersList("Pesho=11;Gosho=4");
+            var products = ConfigureProductsList("Bread=10;Milk=2;");
 
             List<string> shoppingCommands = new List<string>
             {
@@ -62,10 +58,8 @@ namespace Shopping.Tests
         [Test]
         public void Test_FirstBuyer_CouldNotAffordMilk()
         {
-            var shoppingCommandsLists = ConfigureShoppingCommandsLists("Pesho=11;Gosho=4", "Bread=10;Milk=2;");
-
-            var buyers = shoppingCommandsLists.Item1;
-            var products = shoppingCommandsLists.Item2;
+            var buyers = ConfigureBuyersList("Pesho=11;Gosho=4");
+            var products = ConfigureProductsList("Bread=10;Milk=2;");
 
             List<string> shoppingCommands = new List<string>
             {
@@ -87,10 +81,8 @@ namespace Shopping.Tests
         [Test]
         public void Test_SecondBuyer_HasExactlyTwoProductsInShoppingBag()
         {
-            var shoppingCommandsLists = ConfigureShoppingCommandsLists("Pesho=11;Gosho=4", "Bread=10;Milk=2;");
-
-            var buyers = shoppingCommandsLists.Item1;
-            var products = shoppingCommandsLists.Item2;
+            var buyers = ConfigureBuyersList("Pesho=11;Gosho=4");
+            var products = ConfigureProductsList("Bread=10;Milk=2;");
 
             List<string> shoppingCommands = new List<string>
             {
@@ -112,10 +104,8 @@ namespace Shopping.Tests
         [Test]
         public void Test_SecondBuyer_HasOnlyMilkInShoppingBag()
         {
-            var shoppingCommandsLists = ConfigureShoppingCommandsLists("Pesho=11;Gosho=4", "Bread=10;Milk=2;");
-
-            var buyers = shoppingCommandsLists.Item1;
-            var products = shoppingCommandsLists.Item2;
+            var buyers = ConfigureBuyersList("Pesho=11;Gosho=4");
+            var products = ConfigureProductsList("Bread=10;Milk=2;");
 
             List<string> shoppingCommands = new List<string>
             {
@@ -137,10 +127,8 @@ namespace Shopping.Tests
         [Test]
         public void Test_BuyersList_ContainsOnlyOneBuyer()
         {
-            var shoppingCommandsLists = ConfigureShoppingCommandsLists("Mimi=0", "Kafence=2");
-
-            var buyers = shoppingCommandsLists.Item1;
-            var products = shoppingCommandsLists.Item2;
+            var buyers = ConfigureBuyersList("Mimi=0");
+            var products = ConfigureProductsList("Kafence=2");
 
             List<string> shoppingCommands = new List<string>
             {
@@ -159,10 +147,8 @@ namespace Shopping.Tests
         [Test]
         public void Test_TheOnlyBuyer_HasntBoughtAnything()
         {
-            var shoppingCommandsLists = ConfigureShoppingCommandsLists("Mimi=0", "Kafence=2");
-
-            var buyers = shoppingCommandsLists.Item1;
-            var products = shoppingCommandsLists.Item2;
+            var buyers = ConfigureBuyersList("Mimi=0");
+            var products = ConfigureProductsList("Kafence=2");
 
             List<string> shoppingCommands = new List<string>
             {
@@ -181,7 +167,11 @@ namespace Shopping.Tests
         [Test]
         public void Test_PersonShoppingMoney_CannotBeNegative()
         {
-            var argumentException = Assert.Throws<ArgumentException>(() => ConfigureShoppingCommandsLists("Jeko=-3", "Chushki=1;"));
+            var argumentException = Assert.Throws<ArgumentException>(() =>
+            {
+                ConfigureBuyersList("Jeko=-3");
+                ConfigureProductsList("Chushki=1");
+            });
 
             Assert.That(argumentException.Message, Is.EqualTo("Money cannot be negative"));
         }
@@ -189,7 +179,11 @@ namespace Shopping.Tests
         [Test]
         public void Test_PersonName_CannotBeEmpty()
         {
-            var argumentException = Assert.Throws<ArgumentException>(() => ConfigureShoppingCommandsLists("=2", "Milk=1;"));
+            var argumentException = Assert.Throws<ArgumentException>(() =>
+            {
+                ConfigureBuyersList("=2");
+                ConfigureProductsList("Milk=1;");
+            });
 
             Assert.That(argumentException.Message, Is.EqualTo("Name cannot be empty"));
         }
@@ -222,14 +216,11 @@ namespace Shopping.Tests
             }
         }
 
-        private Tuple<List<Person>, List<Product>> ConfigureShoppingCommandsLists(string peopleCommandsString, string productCommandsString)
+        private List<Person> ConfigureBuyersList(string peopleCommandsString)
         {
             string[] peopleCommands = peopleCommandsString.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
 
-            string[] productsCommands = productCommandsString.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-
             List<Person> buyers = new List<Person>();
-            List<Product> products = new List<Product>();
 
             for (int i = 0; i < peopleCommands.Length; i++)
             {
@@ -240,6 +231,15 @@ namespace Shopping.Tests
                 buyers.Add(buyer);
             }
 
+            return buyers;
+        }
+
+        private List<Product> ConfigureProductsList(string productsCommandString)
+        {
+            string[] productsCommands = productsCommandString.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+            List<Product> products = new List<Product>();
+
             for (int i = 0; i < productsCommands.Length; i++)
             {
                 string[] productCommand = productsCommands[i].Split('=');
@@ -249,7 +249,7 @@ namespace Shopping.Tests
                 products.Add(product);
             }
 
-            return Tuple.Create(buyers, products);
+            return products;
         }
     }
 }
