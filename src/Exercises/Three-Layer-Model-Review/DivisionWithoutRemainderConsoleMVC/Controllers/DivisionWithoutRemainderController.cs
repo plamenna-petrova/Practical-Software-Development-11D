@@ -1,8 +1,5 @@
 ﻿using DivisionWithoutRemainderConsoleMVC.Models;
 using DivisionWithoutRemainderConsoleMVC.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DivisionWithoutRemainderConsoleMVC.Controllers
 {

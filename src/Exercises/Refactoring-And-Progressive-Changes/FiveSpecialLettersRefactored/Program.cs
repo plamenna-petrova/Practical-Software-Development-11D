@@ -53,7 +53,7 @@ public class Program
         return output;
     }
 
-    private static void ApppendCharactersToWordsArray(char[] wordCharactersArray, int[] iteratorsValuesArray)
+    private static void AppendCharactersToWordsArray(char[] wordCharactersArray, int[] iteratorsValuesArray)
     {
         for (int c = 0; c < wordCharactersArray.Length; c++)
         {
@@ -80,7 +80,7 @@ public class Program
                     {
                         for (int q = 0; q < 5; q++)
                         {
-                            ApppendCharactersToWordsArray(words, new int[] { i, j, k, p, q });
+                            AppendCharactersToWordsArray(words, new int[] { i, j, k, p, q });
 
                             if (start <= GetWordsWeight(words) && GetWordsWeight(words) <= end)
                             {

@@ -15,6 +15,7 @@ namespace OrdersRefactoredCode
             var loadedOrders = dataMapper.GetAllOrders();
 
             // Names of the 5 most expensive products
+
             var topFiveMostExpensiveProducts = loadedProducts
                 .OrderByDescending(p => p.UnitPrice)
                 .Take(5)
@@ -25,6 +26,7 @@ namespace OrdersRefactoredCode
             Console.WriteLine(new string('-', 10));
 
             // Number of products in each category
+
             var categoriesWithProductsCount = loadedProducts
                 .GroupBy(p => p.CategoryID)
                 .Select(pgr => new 
@@ -42,6 +44,7 @@ namespace OrdersRefactoredCode
             Console.WriteLine(new string('-', 10));
 
             // The 5 top products (by order quantity)
+
             var topFiveProductsByOrderQuantity = loadedOrders
                 .GroupBy(o => o.ProductID)
                 .Select(ogr => new 
@@ -60,6 +63,7 @@ namespace OrdersRefactoredCode
             Console.WriteLine(new string('-', 10));
 
             // The most profitable category
+
             var mostProfitableCategory = loadedOrders
                 .GroupBy(o => o.ProductID)
                 .Select(ogr => new 

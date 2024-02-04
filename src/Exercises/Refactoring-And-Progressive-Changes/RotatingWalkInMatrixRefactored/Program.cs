@@ -96,10 +96,10 @@ namespace Task3
             }
         }
 
-        static void RotateMatrix(int[,] matrixToRotate, int[] cellCourdinates, int n)
+        static void RotateMatrix(int[,] matrixToRotate, int[] cellCoordinates, int n)
         {
-            int i = cellCourdinates[0];
-            int j = cellCourdinates[1];
+            int i = cellCoordinates[0];
+            int j = cellCoordinates[1];
 
             int k = 1;
 
