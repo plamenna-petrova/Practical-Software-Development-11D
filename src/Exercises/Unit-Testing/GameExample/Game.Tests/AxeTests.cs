@@ -28,6 +28,7 @@ namespace Game.Tests
             axe.Attack(dummy);
 
             var invalidOperationException = Assert.Throws<InvalidOperationException>(() => axe.Attack(dummy));
+
             Assert.That(invalidOperationException.Message, Is.EqualTo("Axe is broken."));
         }
     }

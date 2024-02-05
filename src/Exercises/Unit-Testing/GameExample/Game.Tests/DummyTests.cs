@@ -29,6 +29,7 @@ namespace Game.Tests
             hero.Attack(dummy);
 
             var invalidOperationException = Assert.Throws<InvalidOperationException>(() => hero.Attack(dummy));
+
             Assert.That(invalidOperationException.Message, Is.EqualTo("Dummy is dead."));
         }
 
