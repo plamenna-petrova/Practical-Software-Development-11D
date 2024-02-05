@@ -34,7 +34,7 @@ namespace JSONDeserialization
 
     public class Program
     {
-        public static T DeserializeObject<T>(string jsonStringToDeserialize)
+        static T DeserializeObject<T>(string jsonStringToDeserialize)
         {
             if (string.IsNullOrWhiteSpace(jsonStringToDeserialize))
             {
@@ -51,7 +51,7 @@ namespace JSONDeserialization
             }
         }
 
-        public static List<T> DeserializeListOfObjects<T>(string jsonStringToDeserialize)
+        static List<T> DeserializeListOfObjects<T>(string jsonStringToDeserialize)
         {
             if (string.IsNullOrWhiteSpace(jsonStringToDeserialize))
             {

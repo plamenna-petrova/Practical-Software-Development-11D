@@ -187,6 +187,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONDeserialization", "Exer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractExternalLibraryUsageExample", "Exercises\Packages-And-External-Libraries\TesseractExternalLibraryUsageExample\TesseractExternalLibraryUsageExample.csproj", "{2364CECE-B584-4D24-8A5C-9C1905C7ED01}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Connecting-Applications-To-Databases", "Connecting-Applications-To-Databases", "{CCD73273-4607-4CFD-914B-34785290E298}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonTrainer", "Exercises\Packages-And-External-Libraries\PokemonTrainer\PokemonTrainer.csproj", "{A18FE850-D5E4-49CA-851B-CDF445F5824F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonTrainerJSON", "Exercises\Packages-And-External-Libraries\PokemonTrainerJSON\PokemonTrainerJSON.csproj", "{048C02D9-3A7B-488A-8AA9-9EA41264A97A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -513,6 +519,14 @@ Global
 		{2364CECE-B584-4D24-8A5C-9C1905C7ED01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2364CECE-B584-4D24-8A5C-9C1905C7ED01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2364CECE-B584-4D24-8A5C-9C1905C7ED01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A18FE850-D5E4-49CA-851B-CDF445F5824F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A18FE850-D5E4-49CA-851B-CDF445F5824F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A18FE850-D5E4-49CA-851B-CDF445F5824F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A18FE850-D5E4-49CA-851B-CDF445F5824F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{048C02D9-3A7B-488A-8AA9-9EA41264A97A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048C02D9-3A7B-488A-8AA9-9EA41264A97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048C02D9-3A7B-488A-8AA9-9EA41264A97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048C02D9-3A7B-488A-8AA9-9EA41264A97A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -602,6 +616,8 @@ Global
 		{9FF8E298-2E25-4ABC-B107-5FD9592024FC} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
 		{65FB2AAE-FA58-4841-9A05-996A916C2F59} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
 		{2364CECE-B584-4D24-8A5C-9C1905C7ED01} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
+		{A18FE850-D5E4-49CA-851B-CDF445F5824F} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
+		{048C02D9-3A7B-488A-8AA9-9EA41264A97A} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}

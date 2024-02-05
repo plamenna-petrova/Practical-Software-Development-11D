@@ -28,7 +28,7 @@ namespace JSONSerialization
 
     public class Program
     {
-        public static string SerializeObject<T>(T objectToSerialize)
+        static string SerializeObject<T>(T objectToSerialize)
         {
             try
             {
@@ -40,7 +40,7 @@ namespace JSONSerialization
             }
         }
 
-        public static string SerializeListOfObjects<T>(List<T> listOfObjectsToSerialize)
+        static string SerializeListOfObjects<T>(List<T> listOfObjectsToSerialize)
         {
             try
             {
