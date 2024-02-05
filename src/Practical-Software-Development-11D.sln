@@ -185,6 +185,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONSerialization", "Exerci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONDeserialization", "Exercises\Packages-And-External-Libraries\JSONDeserialization\JSONDeserialization.csproj", "{65FB2AAE-FA58-4841-9A05-996A916C2F59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractExternalLibraryUsageExample", "Exercises\Packages-And-External-Libraries\TesseractExternalLibraryUsageExample\TesseractExternalLibraryUsageExample.csproj", "{2364CECE-B584-4D24-8A5C-9C1905C7ED01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -507,6 +509,10 @@ Global
 		{65FB2AAE-FA58-4841-9A05-996A916C2F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65FB2AAE-FA58-4841-9A05-996A916C2F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65FB2AAE-FA58-4841-9A05-996A916C2F59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2364CECE-B584-4D24-8A5C-9C1905C7ED01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2364CECE-B584-4D24-8A5C-9C1905C7ED01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2364CECE-B584-4D24-8A5C-9C1905C7ED01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2364CECE-B584-4D24-8A5C-9C1905C7ED01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -595,6 +601,7 @@ Global
 		{1B6FBC2F-096F-4DE3-A788-2D054E0A3278} = {6A385D7C-3DF8-4FEF-BDF2-E6791444959D}
 		{9FF8E298-2E25-4ABC-B107-5FD9592024FC} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
 		{65FB2AAE-FA58-4841-9A05-996A916C2F59} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
+		{2364CECE-B584-4D24-8A5C-9C1905C7ED01} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
