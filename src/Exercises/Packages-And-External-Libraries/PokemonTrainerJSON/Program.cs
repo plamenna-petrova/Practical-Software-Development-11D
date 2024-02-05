@@ -113,25 +113,25 @@ namespace PokemonTrainerJSON
             {
                 @"
                     [
-                       [""Pesho"", ""Charizard"", ""Fire"", ""100""],
-                       [""Gosho"", ""Squirtle"", ""Water"", ""38""],
-                       [""Pesho"", ""Pikachu"", ""Electricity"", ""10""],
-                       [""Tournament""],
-                       [""Fire""],
-                       [""Electricity""],
-                       [""End""]
+                       ""Pesho Charizard Fire 100"",
+                       ""Gosho Squirtle Water 38"",
+                       ""Pesho Pikachu Electricity 10"",
+                       ""Tournament"",
+                       ""Fire"",
+                       ""Electricity"",
+                       ""End""
                     ]
                 ",
                 @"
                     [
-                       [""Stamat"", ""Blastoise"", ""Water"", ""18""],
-                       [""Nasko"", ""Pickachu"", ""Electricity"", ""22""],
-                       [""Jicata"", ""Kadabra"", ""Psychic"", ""90""],
-                       [""Tournament""],
-                       [""Fire""],
-                       [""Electricity""],
-                       [""Fire""],
-                       [""End""]
+                       ""Stamat Blastoise Water 18"",
+                       ""Nasko Pickachu Electricity 22"",
+                       ""Jicata Kadabra Psychic 90"",
+                       ""Tournament"",
+                       ""Fire"",
+                       ""Electricity"",
+                       ""Fire"",
+                       ""End""
                     ]
                 "
             };
@@ -140,28 +140,32 @@ namespace PokemonTrainerJSON
             {
                 JArray deserializedPokemonAndTrainerInformationJArray = JArray.Parse(pokemonAndTrainerInformationExampleJSONString);
 
-                string[][] pokemonAndTrainerCommands = deserializedPokemonAndTrainerInformationJArray
-                    .Select(commandTokensArray => commandTokensArray.Select(token => token.ToString()).ToArray())
+                string[] pokemonAndTrainerCommands = deserializedPokemonAndTrainerInformationJArray
+                    .Select(command => command.ToString())
                     .ToArray();
 
                 List<Trainer> trainers = new List<Trainer>();
 
                 for (int i = 0; i < pokemonAndTrainerCommands.Length; i++)
                 {
-                    if (pokemonAndTrainerCommands[i][0] == "Tournament")
+                    string[] pokemonAndTrainerCommandTokens = pokemonAndTrainerCommands[i]
+                        .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+
+                    if (pokemonAndTrainerCommandTokens[0] == "Tournament")
                     {
                         bool isTournamentCommandsSendingActive = true;
 
                         while (isTournamentCommandsSendingActive)
                         {
-                            string elementCommand = pokemonAndTrainerCommands[i + 1][0];
+                            string element = pokemonAndTrainerCommands[i + 1]
+                                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToArray()[0];
 
-                            switch (elementCommand)
+                            switch (element)
                             {
                                 case "Fire":
                                 case "Water":
                                 case "Electricity":
-                                    Duel(trainers, elementCommand);
+                                    Duel(trainers, element);
                                     break;
                                 case "End":
                                     isTournamentCommandsSendingActive = false;
@@ -173,10 +177,10 @@ namespace PokemonTrainerJSON
                     }
                     else
                     {
-                        string trainerName = pokemonAndTrainerCommands[i][0];
-                        string pokemonName = pokemonAndTrainerCommands[i][1];
-                        string pokemonElement = pokemonAndTrainerCommands[i][2];
-                        int pokemonHP = int.Parse(pokemonAndTrainerCommands[i][3]);
+                        string trainerName = pokemonAndTrainerCommandTokens[0];
+                        string pokemonName = pokemonAndTrainerCommandTokens[1];
+                        string pokemonElement = pokemonAndTrainerCommandTokens[2];
+                        int pokemonHP = int.Parse(pokemonAndTrainerCommandTokens[3]);
 
                         Trainer trainer = trainers.Where(t => t.Name == trainerName).FirstOrDefault();
                         Pokemon pokemon = new Pokemon(pokemonName, pokemonElement, pokemonHP);
