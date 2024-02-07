@@ -7,30 +7,30 @@ USE MinionsDB
 
 CREATE TABLE Countries (
 	Id INT PRIMARY KEY IDENTITY,
-	Name NVARCHAR(50)
+	[Name] NVARCHAR(50)
 )
 
 CREATE TABLE Towns (
 	Id INT PRIMARY KEY IDENTITY,
-	Name NVARCHAR(50),
+	[Name] NVARCHAR(50),
 	CountryCode INT FOREIGN KEY REFERENCES Countries(Id)
 )
 
 CREATE TABLE Minions (
 	Id INT PRIMARY KEY IDENTITY,
-	Name NVARCHAR(50),
+	[Name] NVARCHAR(50),
 	Age INT,
 	TownId INT FOREIGN KEY REFERENCES Towns(Id)
 )
 
 CREATE TABLE EvilnessFactors (
 	Id INT PRIMARY KEY IDENTITY,
-	Name NVARCHAR(50)
+	[Name] NVARCHAR(50)
 )
 
 CREATE TABLE Villains(
 	Id INT PRIMARY KEY IDENTITY,
-	Name NVARCHAR(50),
+	[Name] NVARCHAR(50),
 	EvilnessFactorId INT FOREIGN KEY REFERENCES EvilnessFactors(Id)
 )
 
@@ -151,35 +151,30 @@ FROM (
 
 -- Problem 4
 
-/*
-   Minion: Bob 14 Berlin
-   Villain: Gru
-*/
-
 DECLARE @MinionName NVARCHAR(50) = 'Bob';
 DECLARE @Age INT = 14;
 DECLARE @TownName NVARCHAR(50) = 'Berlin';
 DECLARE @VillainName NVARCHAR(50) = 'Gru';
 
-IF NOT EXISTS (SELECT 1 FROM Towns WHERE Name = @TownName)
+IF NOT EXISTS (SELECT 1 FROM Towns WHERE [Name] = @TownName)
 BEGIN
-    INSERT INTO Towns (Name, CountryCode)
+    INSERT INTO Towns ([Name], CountryCode)
     VALUES (@TownName, 1); 
     PRINT 'Town ' + @TownName + ' was added to the database.';
 END
 
-IF NOT EXISTS (SELECT 1 FROM Villains WHERE Name = @VillainName)
+IF NOT EXISTS (SELECT 1 FROM Villains WHERE [Name] = @VillainName)
 BEGIN
     DECLARE @EvilFactorId INT;
 
-    IF NOT EXISTS (SELECT 1 FROM EvilnessFactors WHERE Name = 'Evil')
+    IF NOT EXISTS (SELECT 1 FROM EvilnessFactors WHERE [Name] = 'Evil')
     BEGIN
-        INSERT INTO EvilnessFactors (Name) VALUES ('Evil');
+        INSERT INTO EvilnessFactors ([Name]) VALUES ('Evil');
     END
 
-    SELECT @EvilFactorId = Id FROM EvilnessFactors WHERE Name = 'Evil';
+    SELECT @EvilFactorId = Id FROM EvilnessFactors WHERE [Name] = 'Evil';
 
-    INSERT INTO Villains (Name, EvilnessFactorId)
+    INSERT INTO Villains ([Name], EvilnessFactorId)
     VALUES (@VillainName, @EvilFactorId);
 
     PRINT 'Villain ' + @VillainName + ' was added to the database.';
@@ -188,10 +183,10 @@ END
 DECLARE @TownId INT;
 DECLARE @VillainId INT;
 
-SELECT @TownId = Id FROM Towns WHERE Name = @TownName;
-SELECT @VillainId = Id FROM Villains WHERE Name = @VillainName;
+SELECT @TownId = Id FROM Towns WHERE [Name] = @TownName;
+SELECT @VillainId = Id FROM Villains WHERE [Name] = @VillainName;
 
-INSERT INTO Minions (Name, Age, TownId)
+INSERT INTO Minions ([Name], Age, TownId)
 VALUES (@MinionName, @Age, @TownId);
 
 INSERT INTO MinionsVillains (MinionId, VillainId)
@@ -237,7 +232,7 @@ BEGIN
     RETURN;
 END
 
-SELECT @VillainToDeleteName = Name FROM Villains WHERE Id = @VillainToDeleteId;
+SELECT @VillainToDeleteName = [Name] FROM Villains WHERE Id = @VillainToDeleteId;
 
 SELECT @DeletedVillainMinionsCount = COUNT(*) FROM MinionsVillains WHERE VillainId = @VillainToDeleteId;
 
@@ -261,38 +256,32 @@ END
 
 -- Problem 7
 
-DECLARE @FirstRowNumber INT;
-DECLARE @LastRowNumber INT;
-
-SELECT @FirstRowNumber = MIN(RowNum), @LastRowNumber = MAX(RowNum)
-FROM (
+WITH OrderedMinions AS (
     SELECT 
-        ROW_NUMBER() OVER (ORDER BY Id) AS RowNum
+        Id, 
+        [Name],
+        ROW_NUMBER() OVER (ORDER BY Id) AS RowNumber
     FROM Minions
-) AS MinionsWithRowNum;
+)
 
--- Output the names in the specified order
-SELECT 
-    m.Name AS OriginalOrder,
-    o.Name AS Output
-FROM (
-    SELECT 
-        ROW_NUMBER() OVER (ORDER BY Id) AS RowNum,
-        Name
-    FROM Minions
-) AS m
-JOIN (
-    SELECT 
-        ROW_NUMBER() OVER (ORDER BY Id) AS OriginalRowNum,
-        ROW_NUMBER() OVER (ORDER BY Id DESC) AS OutputRowNum,
-        Name
-    FROM Minions
-) AS o ON m.RowNum = o.OriginalRowNum OR m.RowNum = o.OutputRowNum
-
-WHERE m.RowNum <= @FirstRowNumber + CEILING((@LastRowNumber - @FirstRowNumber + 1) / 2)
-   OR m.RowNum >= @LastRowNumber - CEILING((@LastRowNumber - @FirstRowNumber + 1) / 2)
-
-ORDER BY m.RowNum;
+SELECT TOP (SELECT COUNT(*) FROM Minions)
+    om2.[Name] AS [Output]
+FROM OrderedMinions AS om1
+JOIN OrderedMinions AS om2 ON om1.RowNumber = om2.RowNumber OR om1.RowNumber + om2.RowNumber - 1 = (SELECT MAX(RowNumber) FROM OrderedMinions)
+ORDER BY om1.RowNumber
 
 -- Problem 8
 
+DECLARE @MinionIds VARCHAR(MAX) = '1 3 5';
+
+UPDATE Minions
+SET
+    Age = Age + 1,
+    [Name] = UPPER(LEFT([Name], 1)) + LOWER(SUBSTRING([Name], 2, LEN([Name]) - 1))
+WHERE
+    Id IN (SELECT value FROM STRING_SPLIT(@MinionIds, ' '));
+
+SELECT
+    Name + ' ' + CAST(Age AS VARCHAR(10)) AS MinionInfo
+FROM
+    Minions;
