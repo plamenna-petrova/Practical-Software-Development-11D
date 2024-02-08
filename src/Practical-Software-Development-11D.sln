@@ -193,7 +193,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokemonTrainer", "Exercises
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokemonTrainerJSON", "Exercises\Packages-And-External-Libraries\PokemonTrainerJSON\PokemonTrainerJSON.csproj", "{048C02D9-3A7B-488A-8AA9-9EA41264A97A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatingABasketballTeamJSON", "Exercises\Practical-Exams\CreatingABasketballTeamJSON\CreatingABasketballTeamJSON.csproj", "{2B0E1B6E-E0C5-428E-B9A7-E196A5805BDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreatingABasketballTeamJSON", "Exercises\Practical-Exams\CreatingABasketballTeamJSON\CreatingABasketballTeamJSON.csproj", "{2B0E1B6E-E0C5-428E-B9A7-E196A5805BDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillainsNames", "Exercises\Connecting-Applications-To-Databases\VillainsNames\VillainsNames.csproj", "{B06436E0-02C7-4253-9232-C62529996B28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillainsNamesAsync", "Exercises\Connecting-Applications-To-Databases\VillainsNamesAsync\VillainsNamesAsync.csproj", "{153FE116-E22D-48D8-BC53-E78B50DD8B9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinionsNames", "Exercises\Connecting-Applications-To-Databases\MinionsNames\MinionsNames.csproj", "{57C8EB9B-566D-466A-B2F1-7B4EBACBEC9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinionsNamesAsync", "Exercises\Connecting-Applications-To-Databases\MinionsNamesAsync\MinionsNamesAsync.csproj", "{949CC2D2-764C-4826-90BB-2FEC9EBD7BEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -533,6 +541,22 @@ Global
 		{2B0E1B6E-E0C5-428E-B9A7-E196A5805BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B0E1B6E-E0C5-428E-B9A7-E196A5805BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B0E1B6E-E0C5-428E-B9A7-E196A5805BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B06436E0-02C7-4253-9232-C62529996B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06436E0-02C7-4253-9232-C62529996B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06436E0-02C7-4253-9232-C62529996B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06436E0-02C7-4253-9232-C62529996B28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{153FE116-E22D-48D8-BC53-E78B50DD8B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{153FE116-E22D-48D8-BC53-E78B50DD8B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{153FE116-E22D-48D8-BC53-E78B50DD8B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{153FE116-E22D-48D8-BC53-E78B50DD8B9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C8EB9B-566D-466A-B2F1-7B4EBACBEC9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C8EB9B-566D-466A-B2F1-7B4EBACBEC9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C8EB9B-566D-466A-B2F1-7B4EBACBEC9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C8EB9B-566D-466A-B2F1-7B4EBACBEC9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{949CC2D2-764C-4826-90BB-2FEC9EBD7BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949CC2D2-764C-4826-90BB-2FEC9EBD7BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949CC2D2-764C-4826-90BB-2FEC9EBD7BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949CC2D2-764C-4826-90BB-2FEC9EBD7BEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -625,6 +649,10 @@ Global
 		{A18FE850-D5E4-49CA-851B-CDF445F5824F} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
 		{048C02D9-3A7B-488A-8AA9-9EA41264A97A} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
 		{2B0E1B6E-E0C5-428E-B9A7-E196A5805BDA} = {407EC89C-FEB1-4F4C-9703-477BB7B389C7}
+		{B06436E0-02C7-4253-9232-C62529996B28} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{153FE116-E22D-48D8-BC53-E78B50DD8B9E} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{57C8EB9B-566D-466A-B2F1-7B4EBACBEC9D} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{949CC2D2-764C-4826-90BB-2FEC9EBD7BEE} = {CCD73273-4607-4CFD-914B-34785290E298}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}

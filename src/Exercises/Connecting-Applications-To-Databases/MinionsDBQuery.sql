@@ -285,3 +285,23 @@ SELECT
     Name + ' ' + CAST(Age AS VARCHAR(10)) AS MinionInfo
 FROM
     Minions;
+
+-- Helper queries
+
+SELECT *
+FROM Countries
+
+SELECT *
+FROM Towns
+
+SELECT *
+FROM Minions
+
+SELECT *
+FROM EvilnessFactors
+
+SELECT *
+FROM Villains
+
+SELECT *
+FROM MinionsVillains
