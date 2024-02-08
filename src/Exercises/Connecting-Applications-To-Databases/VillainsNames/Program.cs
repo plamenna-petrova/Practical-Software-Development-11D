@@ -8,36 +8,43 @@ namespace VillainsNames
     {
         static void Main(string[] args)
         {
-            const string DatabaseConnectionString = @"Server=.;Database=MinionsDB;Integrated Security=true;";
-
-            using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
+            try
             {
-                sqlConnection.Open();
+                const string DatabaseConnectionString = @"Server=LENOVOLEGION\SQLEXPRESS;Database=MinionsDB;Integrated Security=true;";
 
-                const string VillainsWithMoreThanThreeMinionsQueryString = @"
-                    SELECT v.[Name] AS VillainName, COUNT(mv.MinionId) AS MinionsCount
-                    FROM Villains AS v
-                    JOIN MinionsVillains AS mv ON v.Id = mv.VillainId
-                    GROUP BY v.[Name]
-                    HAVING COUNT(mv.MinionId) > 3
-                    ORDER BY MinionsCount DESC
-                ";
-
-                using (SqlCommand villainsWithMoreThanThreeMinionsSqlCommand = new SqlCommand(VillainsWithMoreThanThreeMinionsQueryString, sqlConnection))
+                using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
                 {
-                    SqlDataReader villainsWithMoreThanThreeMinionsSqlDataReader = villainsWithMoreThanThreeMinionsSqlCommand.ExecuteReader();
+                    sqlConnection.Open();
 
-                    using (villainsWithMoreThanThreeMinionsSqlDataReader)
+                    const string VillainsWithMoreThanThreeMinionsQueryString = @"
+                        SELECT v.[Name] AS VillainName, COUNT(mv.MinionId) AS MinionsCount
+                        FROM Villains AS v
+                        JOIN MinionsVillains AS mv ON v.Id = mv.VillainId
+                        GROUP BY v.[Name]
+                        HAVING COUNT(mv.MinionId) > 3
+                        ORDER BY MinionsCount DESC
+                    ";
+
+                    using (SqlCommand villainsWithMoreThanThreeMinionsSqlCommand = new SqlCommand(VillainsWithMoreThanThreeMinionsQueryString, sqlConnection))
                     {
-                        while (villainsWithMoreThanThreeMinionsSqlDataReader.Read())
-                        {
-                            string villainName = villainsWithMoreThanThreeMinionsSqlDataReader.GetString(0);
-                            int minionsCount = villainsWithMoreThanThreeMinionsSqlDataReader.GetInt32(1);
+                        SqlDataReader sqlDataReader = villainsWithMoreThanThreeMinionsSqlCommand.ExecuteReader();
 
-                            Console.WriteLine($"{villainName} - {minionsCount}");
+                        using (sqlDataReader)
+                        {
+                            while (sqlDataReader.Read())
+                            {
+                                string villainName = sqlDataReader.GetString(0);
+                                int minionsCount = sqlDataReader.GetInt32(1);
+
+                                Console.WriteLine($"{villainName} - {minionsCount}");
+                            }
                         }
                     }
-                }               
+                }
+            }
+            catch (SqlException sqlException)
+            {
+                Console.WriteLine(sqlException.Message);
             }
         }
     }

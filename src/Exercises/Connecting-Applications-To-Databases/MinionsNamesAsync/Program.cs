@@ -8,76 +8,81 @@ namespace MinionsNamesAsync
     {
         static async Task Main()
         {
-            const string DatabaseConnectionString = @"Server=.;Database=MinionsDB;Integrated Security=true;";
-
-            Console.Write("Enter villain Id: ");
-            int villainId = int.Parse(Console.ReadLine());
-
-            await using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
+            try
             {
-                await sqlConnection.OpenAsync();
+                const string DatabaseConnectionString = @"Server=LENOVOLEGION\SQLEXPRESS;Database=MinionsDB;Integrated Security=true;";
 
-                const string VillainExistsQueryString = @"SELECT 1 FROM Villains WHERE Id = @VillainId";
+                Console.Write("Enter villain Id: ");
+                int villainId = int.Parse(Console.ReadLine());
 
-                await using (SqlCommand villainExistsSqlCommand = new SqlCommand(VillainExistsQueryString, sqlConnection))
+                await using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
                 {
-                    villainExistsSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
+                    await sqlConnection.OpenAsync();
 
-                    int villainExistsQueryResult = (int)await villainExistsSqlCommand.ExecuteScalarAsync();
+                    const string VillainExistsQueryString = @"SELECT 1 FROM Villains WHERE Id = @VillainId";
 
-                    if (villainExistsQueryResult == 0)
+                    await using (SqlCommand villainExistsSqlCommand = new SqlCommand(VillainExistsQueryString, sqlConnection))
                     {
-                        Console.WriteLine($"No villain with ID {villainId} exists in the database.");
-                        return;
-                    }
+                        villainExistsSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
 
-                    const string VillainNameByIdQueryString = @"SELECT v.[Name] FROM Villains AS v WHERE Id = @VillainId";
+                        int villainExistsQueryResult = (int)await villainExistsSqlCommand.ExecuteScalarAsync();
 
-                    await using (SqlCommand villainNameByIdSqlCommand = new SqlCommand(VillainNameByIdQueryString, sqlConnection))
-                    {
-                        villainNameByIdSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
-
-                        string villainNameQueryResult = (string)await villainNameByIdSqlCommand.ExecuteScalarAsync();
-
-                        const string MinionsInfoByVillainIdQueryString = @"
-                            SELECT TOP 100 PERCENT
-                                ROW_NUMBER() OVER (ORDER BY m.[Name]) AS RowNumber,
-                                m.[Name] AS MinionName,
-                                m.Age AS MinionAge
-                            FROM Minions AS m
-                            JOIN MinionsVillains AS mv ON m.Id = mv.MinionId
-                            JOIN Villains AS v ON mv.VillainId = v.Id
-                            WHERE v.Id = @VillainId
-                            ORDER BY MinionName ASC
-                        ";
-
-                        await using (SqlCommand minionsInfoByVillainIdSqlCommand = new SqlCommand(MinionsInfoByVillainIdQueryString, sqlConnection))
+                        if (villainExistsQueryResult == 0)
                         {
-                            minionsInfoByVillainIdSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
+                            Console.WriteLine($"No villain with ID {villainId} exists in the database.");
+                            return;
+                        }
 
-                            await using (SqlDataReader minionsInfoByVillainIdSqlDataReader = await minionsInfoByVillainIdSqlCommand.ExecuteReaderAsync())
+                        const string VillainNameByIdQueryString = @"SELECT v.[Name] FROM Villains AS v WHERE Id = @VillainId";
+
+                        await using (SqlCommand villainNameByIdSqlCommand = new SqlCommand(VillainNameByIdQueryString, sqlConnection))
+                        {
+                            villainNameByIdSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
+
+                            string villainNameQueryResult = (string)await villainNameByIdSqlCommand.ExecuteScalarAsync();
+
+                            const string MinionsInfoByVillainIdQueryString = @"
+                                SELECT m.[Name] AS MinionName, m.Age AS MinionAge
+                                FROM Minions AS m
+                                JOIN MinionsVillains AS mv ON m.Id = mv.MinionId
+                                JOIN Villains AS v ON mv.VillainId = v.Id
+                                WHERE v.Id = @VillainId
+                                ORDER BY MinionName ASC
+                            ";
+
+                            await using (SqlCommand minionsInfoByVillainIdSqlCommand = new SqlCommand(MinionsInfoByVillainIdQueryString, sqlConnection))
                             {
-                                Console.WriteLine($"Villain: {villainNameQueryResult}");
+                                minionsInfoByVillainIdSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
 
-                                if (!minionsInfoByVillainIdSqlDataReader.HasRows)
+                                await using (SqlDataReader sqlDataReader = await minionsInfoByVillainIdSqlCommand.ExecuteReaderAsync())
                                 {
-                                    Console.WriteLine("(no minions)");
-                                }
-                                else
-                                {
-                                    while (await minionsInfoByVillainIdSqlDataReader.ReadAsync())
+                                    Console.WriteLine($"Villain: {villainNameQueryResult}");
+
+                                    if (!sqlDataReader.HasRows)
                                     {
-                                        long rowNumber = minionsInfoByVillainIdSqlDataReader.GetInt64(0);
-                                        string villainName = minionsInfoByVillainIdSqlDataReader.GetString(1);
-                                        int minionsCount = minionsInfoByVillainIdSqlDataReader.GetInt32(2);
+                                        Console.WriteLine("(no minions)");
+                                    }
+                                    else
+                                    {
+                                        int i = 0;
 
-                                        Console.WriteLine($"{rowNumber}. {villainName} {minionsCount}");
+                                        while (await sqlDataReader.ReadAsync())
+                                        {
+                                            string villainName = sqlDataReader.GetString(0);
+                                            int minionsCount = sqlDataReader.GetInt32(1);
+
+                                            Console.WriteLine($"{++i}. {villainName} {minionsCount}");
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
+            }
+            catch (SqlException sqlException)
+            {
+                Console.WriteLine(sqlException.Message);
             }
         }
     }

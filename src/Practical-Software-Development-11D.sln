@@ -203,6 +203,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinionsNames", "Exercises\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinionsNamesAsync", "Exercises\Connecting-Applications-To-Databases\MinionsNamesAsync\MinionsNamesAsync.csproj", "{949CC2D2-764C-4826-90BB-2FEC9EBD7BEE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddAMinion", "Exercises\Connecting-Applications-To-Databases\AddAMinion\AddAMinion.csproj", "{EB77318F-759B-4062-A2C5-6BE9A7C03367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddAMinionAsync", "Exercises\Connecting-Applications-To-Databases\AddAMinionAsync\AddAMinionAsync.csproj", "{E590AF85-0B9E-4EE1-A5E5-7D73D7F35931}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -557,6 +561,14 @@ Global
 		{949CC2D2-764C-4826-90BB-2FEC9EBD7BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{949CC2D2-764C-4826-90BB-2FEC9EBD7BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{949CC2D2-764C-4826-90BB-2FEC9EBD7BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB77318F-759B-4062-A2C5-6BE9A7C03367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB77318F-759B-4062-A2C5-6BE9A7C03367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB77318F-759B-4062-A2C5-6BE9A7C03367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB77318F-759B-4062-A2C5-6BE9A7C03367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E590AF85-0B9E-4EE1-A5E5-7D73D7F35931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E590AF85-0B9E-4EE1-A5E5-7D73D7F35931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E590AF85-0B9E-4EE1-A5E5-7D73D7F35931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E590AF85-0B9E-4EE1-A5E5-7D73D7F35931}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -653,6 +665,8 @@ Global
 		{153FE116-E22D-48D8-BC53-E78B50DD8B9E} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{57C8EB9B-566D-466A-B2F1-7B4EBACBEC9D} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{949CC2D2-764C-4826-90BB-2FEC9EBD7BEE} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{EB77318F-759B-4062-A2C5-6BE9A7C03367} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{E590AF85-0B9E-4EE1-A5E5-7D73D7F35931} = {CCD73273-4607-4CFD-914B-34785290E298}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}

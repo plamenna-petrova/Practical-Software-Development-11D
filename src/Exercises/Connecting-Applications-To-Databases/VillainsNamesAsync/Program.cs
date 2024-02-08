@@ -8,37 +8,44 @@ namespace VillainsNamesAsync
     {
         static async Task Main(string[] args)
         {
-            const string DatabaseConnectionString = @"Server=.;Database=MinionsDB;Integrated Security=true;";
-
-            await using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
+            try
             {
-                await sqlConnection.OpenAsync();
+                const string DatabaseConnectionString = @"Server=LENOVOLEGION\SQLEXPRESS;Database=MinionsDB;Integrated Security=true;";
 
-                const string VillainsWithMoreThanThreeMinionsQueryString = @"
-                    SELECT v.[Name] AS VillainName, COUNT(mv.MinionId) AS MinionsCount
-                    FROM Villains AS v
-                    JOIN MinionsVillains AS mv ON v.Id = mv.VillainId
-                    GROUP BY v.[Name]
-                    HAVING COUNT(mv.MinionId) > 3
-                    ORDER BY MinionsCount DESC
-                ";
-
-                await using (SqlCommand villainsWithMoreThanThreeMinionsSqlCommand = new SqlCommand(VillainsWithMoreThanThreeMinionsQueryString, sqlConnection))
+                await using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
                 {
-                    SqlDataReader villainsWithMoreThanThreeMinionsSqlDataReader = await villainsWithMoreThanThreeMinionsSqlCommand.ExecuteReaderAsync();
+                    await sqlConnection.OpenAsync();
 
-                    await using (villainsWithMoreThanThreeMinionsSqlDataReader)
+                    const string VillainsWithMoreThanThreeMinionsQueryString = @"
+                        SELECT v.[Name] AS VillainName, COUNT(mv.MinionId) AS MinionsCount
+                        FROM Villains AS v
+                        JOIN MinionsVillains AS mv ON v.Id = mv.VillainId
+                        GROUP BY v.[Name]
+                        HAVING COUNT(mv.MinionId) > 3
+                        ORDER BY MinionsCount DESC
+                    ";
+
+                    await using (SqlCommand villainsWithMoreThanThreeMinionsSqlCommand = new SqlCommand(VillainsWithMoreThanThreeMinionsQueryString, sqlConnection))
                     {
-                        while (await villainsWithMoreThanThreeMinionsSqlDataReader.ReadAsync())
-                        {
-                            string villainName = villainsWithMoreThanThreeMinionsSqlDataReader.GetString(0);
-                            int minionsCount = villainsWithMoreThanThreeMinionsSqlDataReader.GetInt32(1);
+                        SqlDataReader sqlDataReader = await villainsWithMoreThanThreeMinionsSqlCommand.ExecuteReaderAsync();
 
-                            Console.WriteLine($"{villainName} - {minionsCount}");
+                        await using (sqlDataReader)
+                        {
+                            while (await sqlDataReader.ReadAsync())
+                            {
+                                string villainName = sqlDataReader.GetString(0);
+                                int minionsCount = sqlDataReader.GetInt32(1);
+
+                                Console.WriteLine($"{villainName} - {minionsCount}");
+                            }
                         }
                     }
                 }
-            }           
+            }
+            catch (SqlException sqlException)
+            {
+                Console.WriteLine(sqlException.Message);
+            }   
         }
     }
 }
