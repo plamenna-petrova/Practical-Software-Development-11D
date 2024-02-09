@@ -11,7 +11,6 @@ namespace MinionsNames
             {
                 const string DatabaseConnectionString = @"Server=LENOVOLEGION\SQLEXPRESS;Database=MinionsDB;Integrated Security=true;";
 
-                Console.Write("Enter villain Id: ");
                 int villainId = int.Parse(Console.ReadLine());
 
                 using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
@@ -24,7 +23,7 @@ namespace MinionsNames
                     {
                         villainExistsSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
 
-                        int villainExistsQueryResult = (int)villainExistsSqlCommand.ExecuteScalar();
+                        int villainExistsQueryResult = (int) villainExistsSqlCommand.ExecuteScalar();
 
                         if (villainExistsQueryResult == 0)
                         {
@@ -32,15 +31,15 @@ namespace MinionsNames
                             return;
                         }
 
-                        const string VillainNameByIdQueryString = @"SELECT v.[Name] FROM Villains AS v WHERE Id = @VillainId";
+                        const string VillainNameByIdQueryString = @"SELECT v.[Name] FROM Villains AS v WHERE v.Id = @VillainId";
 
                         using (SqlCommand villainNameByIdSqlCommand = new SqlCommand(VillainNameByIdQueryString, sqlConnection))
                         {
                             villainNameByIdSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
 
-                            string villainNameQueryResult = (string)villainNameByIdSqlCommand.ExecuteScalar();
+                            string villainNameQueryResult = (string) villainNameByIdSqlCommand.ExecuteScalar();
 
-                            const string MinionsInfoByVillainIdQueryString = @"
+                            const string MinionsInfoByVillainIdSqlCommand = @"
                                 SELECT m.[Name] AS MinionName, m.Age AS MinionAge
 	                            FROM Minions AS m
 	                            JOIN MinionsVillains AS mv ON m.Id = mv.MinionId
@@ -49,19 +48,17 @@ namespace MinionsNames
 	                            ORDER BY MinionName ASC
                             ";
 
-                            using (SqlCommand minionsInfoByVillainIdSqlCommand = new SqlCommand(MinionsInfoByVillainIdQueryString, sqlConnection))
+                            using (SqlCommand minionsInfoByVillainIdSqlCommand = new SqlCommand(MinionsInfoByVillainIdSqlCommand, sqlConnection))
                             {
                                 minionsInfoByVillainIdSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
 
-                                SqlDataReader sqlDataReader = minionsInfoByVillainIdSqlCommand.ExecuteReader();
-
-                                using (sqlDataReader)
+                                using (SqlDataReader sqlDataReader = minionsInfoByVillainIdSqlCommand.ExecuteReader()) 
                                 {
                                     Console.WriteLine($"Villain: {villainNameQueryResult}");
 
-                                    if (!sqlDataReader.HasRows)
+                                    if (!sqlDataReader.HasRows) 
                                     {
-                                        Console.WriteLine("(no minions)");
+                                        Console.WriteLine($"(no minions)");
                                     }
                                     else
                                     {
@@ -69,10 +66,10 @@ namespace MinionsNames
 
                                         while (sqlDataReader.Read())
                                         {
-                                            string villainName = sqlDataReader.GetString(0);
-                                            int minionsCount = sqlDataReader.GetInt32(1);
+                                            string minionName = sqlDataReader.GetString(0);
+                                            int minionAge = sqlDataReader.GetInt32(1);
 
-                                            Console.WriteLine($"{++i}. {villainName} {minionsCount}");
+                                            Console.WriteLine($"{++i}. {minionName} {minionAge}");
                                         }
                                     }
                                 }

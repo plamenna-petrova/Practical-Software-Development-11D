@@ -156,6 +156,10 @@ DECLARE @Age INT = 14;
 DECLARE @TownName NVARCHAR(50) = 'Berlin';
 DECLARE @VillainName NVARCHAR(50) = 'Gru';
 
+SELECT TOP (1) Id FROM Minions 
+WHERE [Name] = @MinionName 
+ORDER BY Id DESC
+
 IF NOT EXISTS (SELECT 1 FROM Towns WHERE [Name] = @TownName)
 BEGIN
     INSERT INTO Towns ([Name], CountryCode)

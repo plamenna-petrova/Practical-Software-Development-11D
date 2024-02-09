@@ -12,7 +12,6 @@ namespace MinionsNamesAsync
             {
                 const string DatabaseConnectionString = @"Server=LENOVOLEGION\SQLEXPRESS;Database=MinionsDB;Integrated Security=true;";
 
-                Console.Write("Enter villain Id: ");
                 int villainId = int.Parse(Console.ReadLine());
 
                 await using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
@@ -68,10 +67,10 @@ namespace MinionsNamesAsync
 
                                         while (await sqlDataReader.ReadAsync())
                                         {
-                                            string villainName = sqlDataReader.GetString(0);
+                                            string minionsName = sqlDataReader.GetString(0);
                                             int minionsCount = sqlDataReader.GetInt32(1);
 
-                                            Console.WriteLine($"{++i}. {villainName} {minionsCount}");
+                                            Console.WriteLine($"{++i}. {minionsName} {minionsCount}");
                                         }
                                     }
                                 }

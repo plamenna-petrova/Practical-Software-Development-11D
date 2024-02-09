@@ -27,9 +27,7 @@ namespace VillainsNamesAsync
 
                     await using (SqlCommand villainsWithMoreThanThreeMinionsSqlCommand = new SqlCommand(VillainsWithMoreThanThreeMinionsQueryString, sqlConnection))
                     {
-                        SqlDataReader sqlDataReader = await villainsWithMoreThanThreeMinionsSqlCommand.ExecuteReaderAsync();
-
-                        await using (sqlDataReader)
+                        await using (SqlDataReader sqlDataReader = await villainsWithMoreThanThreeMinionsSqlCommand.ExecuteReaderAsync())
                         {
                             while (await sqlDataReader.ReadAsync())
                             {

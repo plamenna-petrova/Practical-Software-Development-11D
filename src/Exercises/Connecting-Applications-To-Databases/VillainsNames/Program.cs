@@ -25,11 +25,9 @@ namespace VillainsNames
                         ORDER BY MinionsCount DESC
                     ";
 
-                    using (SqlCommand villainsWithMoreThanThreeMinionsSqlCommand = new SqlCommand(VillainsWithMoreThanThreeMinionsQueryString, sqlConnection))
+                    using (SqlCommand sqlCommand = new SqlCommand(VillainsWithMoreThanThreeMinionsQueryString, sqlConnection))
                     {
-                        SqlDataReader sqlDataReader = villainsWithMoreThanThreeMinionsSqlCommand.ExecuteReader();
-
-                        using (sqlDataReader)
+                        using (SqlDataReader sqlDataReader = sqlCommand.ExecuteReader())
                         {
                             while (sqlDataReader.Read())
                             {
