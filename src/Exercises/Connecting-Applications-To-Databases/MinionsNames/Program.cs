@@ -9,9 +9,9 @@ namespace MinionsNames
         {
             try
             {
-                const string DatabaseConnectionString = @"Server=LENOVOLEGION\SQLEXPRESS;Database=MinionsDB;Integrated Security=true;";
-
                 int villainId = int.Parse(Console.ReadLine());
+
+                const string DatabaseConnectionString = @"Server=LENOVOLEGION\SQLEXPRESS;Database=MinionsDB;Integrated Security=true;";
 
                 using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
                 {
@@ -23,9 +23,9 @@ namespace MinionsNames
                     {
                         villainExistsSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
 
-                        int villainExistsQueryResult = (int) villainExistsSqlCommand.ExecuteScalar();
+                        var villainExistsQueryResult = villainExistsSqlCommand.ExecuteScalar();
 
-                        if (villainExistsQueryResult == 0)
+                        if (villainExistsQueryResult == null)
                         {
                             Console.WriteLine($"No villain with ID {villainId} exists in the database.");
                             return;

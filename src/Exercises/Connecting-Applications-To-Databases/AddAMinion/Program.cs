@@ -10,8 +10,6 @@ namespace AddAMinion
         {
             try
             {
-                const string DatabaseConnectionString = @"Server=LENOVOLEGION\SQLEXPRESS;Database=MinionsDB;Integrated Security=true;";
-
                 string[] minionCommandTokens = Console.ReadLine().Split(new char[] { '.', ' ' }).Skip(1).ToArray();
 
                 string minionName = minionCommandTokens[0];
@@ -19,6 +17,8 @@ namespace AddAMinion
                 string townName = minionCommandTokens[2];
 
                 string villainName = Console.ReadLine().Split(new char[] { '.', ' ' }).Skip(1).ToArray()[0];
+
+                const string DatabaseConnectionString = @"Server=DESKTOP-H75JB3P;Database=MinionsDB;Integrated Security=true;";
 
                 using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
                 {
@@ -30,11 +30,11 @@ namespace AddAMinion
 
                     townExistsSqlCommand.Parameters.AddWithValue("@TownName", townName);
 
-                    int townExistsQueryResult = (int)townExistsSqlCommand.ExecuteScalar();
+                    var townExistsQueryResult = townExistsSqlCommand.ExecuteScalar();
 
-                    if (townExistsQueryResult == 0)
+                    if (townExistsQueryResult == null)
                     {
-                        const string InsertTownQueryString = @"INSERT INTO Towns ([Name], CountryCode) VALUES (@TownName, 1)";
+                        const string InsertTownQueryString = @"INSERT INTO Towns ([Name]) VALUES (@TownName)";
 
                         using (SqlCommand insertTownSqlCommand = new SqlCommand(InsertTownQueryString, sqlConnection))
                         {
@@ -55,17 +55,17 @@ namespace AddAMinion
                     {
                         villainExistsSqlCommand.Parameters.AddWithValue("@VillainName", villainName);
 
-                        int villainExistsQueryResult = (int)villainExistsSqlCommand.ExecuteScalar();
+                        var villainExistsQueryResult = villainExistsSqlCommand.ExecuteScalar();
 
-                        if (villainExistsQueryResult == 0)
+                        if (villainExistsQueryResult == null)
                         {
                             const string EvilnessFactorExistsQueryString = @"SELECT 1 FROM EvilnessFactors WHERE [Name] = 'Evil'";
 
                             using (SqlCommand evilnessFactorExistsSqlCommand = new SqlCommand(EvilnessFactorExistsQueryString, sqlConnection))
                             {
-                                int evilnessFactorExistsQueryResult = (int)evilnessFactorExistsSqlCommand.ExecuteScalar();
+                                var evilnessFactorExistsQueryResult = evilnessFactorExistsSqlCommand.ExecuteScalar();
 
-                                if (evilnessFactorExistsQueryResult == 0)
+                                if (evilnessFactorExistsQueryResult == null)
                                 {
                                     const string InsertEvilnessFactorQueryString = @"INSERT INTO EvilnessFactors ([Name]) VALUES ('Evil')";
 
@@ -80,7 +80,7 @@ namespace AddAMinion
 
                             SqlCommand evilFactorIdSqlCommand = new SqlCommand(EvilnessFactorIdQueryString, sqlConnection);
 
-                            int evilFactorId = (int)evilFactorIdSqlCommand.ExecuteScalar();
+                            int evilFactorId = (int) evilFactorIdSqlCommand.ExecuteScalar();
 
                             const string InsertVillainQueryString = @"
                                 INSERT INTO Villains ([Name], EvilnessFactorId)
@@ -131,7 +131,7 @@ namespace AddAMinion
 
                             villainIdByNameSqlCommand.Parameters.AddWithValue("@VillainName", villainName);
 
-                            int villainIdByNameQueryResult = (int)villainIdByNameSqlCommand.ExecuteScalar();
+                            int villainIdByNameQueryResult = (int) villainIdByNameSqlCommand.ExecuteScalar();
 
                             const string LatestMinionIdByNameQueryString = @"
                                 SELECT TOP(1) Id FROM Minions 
@@ -159,7 +159,7 @@ namespace AddAMinion
 
                                 if (insertMinionsVillainsMappingQueryResult == 1) 
                                 {
-                                    Console.WriteLine($"Successfully added {minionName} to be minion of {villainName}");
+                                    Console.WriteLine($"Successfully added {minionName} to be minion of {villainName}.");
                                 }
                             }
                         }

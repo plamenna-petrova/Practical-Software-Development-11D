@@ -57,10 +57,9 @@ VALUES
 ('London', 2),
 ('Southampton', 2),
 ('Bath', 2),
-('Liverpool', 2),
-('Berlin', 3),
-('Frankfurt', 3),
-('Oslo', 4)
+('Berlin', 4),
+('Frankfurt', 4),
+('Oslo', 5)
 
 INSERT INTO Minions ([Name], Age, TownId)
 VALUES
@@ -72,9 +71,9 @@ VALUES
 ('Carry', 50, 10),
 ('Becky', 125, 5),
 ('Mars', 21, 1),
-('Misho', 5, 10),
+('misho', 5, 10),
 ('Zoe', 125, 5),
-('Json', 21, 1)
+('json', 21, 1)
 
 INSERT INTO EvilnessFactors ([Name])
 VALUES
@@ -102,7 +101,6 @@ VALUES
 (3, 5),
 (2, 6),
 (11, 5),
-(8, 4),
 (9, 7),
 (7, 1),
 (1, 3),
@@ -162,8 +160,8 @@ ORDER BY Id DESC
 
 IF NOT EXISTS (SELECT 1 FROM Towns WHERE [Name] = @TownName)
 BEGIN
-    INSERT INTO Towns ([Name], CountryCode)
-    VALUES (@TownName, 1); 
+    INSERT INTO Towns ([Name])
+    VALUES (@TownName); 
     PRINT 'Town ' + @TownName + ' was added to the database.';
 END
 
@@ -242,9 +240,9 @@ SELECT @DeletedVillainMinionsCount = COUNT(*) FROM MinionsVillains WHERE Villain
 
 BEGIN TRANSACTION;
 
-DELETE FROM Villains WHERE Id = @VillainToDeleteId;
-
 DELETE FROM MinionsVillains WHERE VillainId = @VillainToDeleteId;
+
+DELETE FROM Villains WHERE Id = @VillainToDeleteId;
 
 IF @@ERROR = 0
 BEGIN

@@ -10,9 +10,9 @@ namespace MinionsNamesAsync
         {
             try
             {
-                const string DatabaseConnectionString = @"Server=LENOVOLEGION\SQLEXPRESS;Database=MinionsDB;Integrated Security=true;";
-
                 int villainId = int.Parse(Console.ReadLine());
+
+                const string DatabaseConnectionString = @"Server=LENOVOLEGION\SQLEXPRESS;Database=MinionsDB;Integrated Security=true;";
 
                 await using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
                 {
@@ -24,9 +24,9 @@ namespace MinionsNamesAsync
                     {
                         villainExistsSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
 
-                        int villainExistsQueryResult = (int)await villainExistsSqlCommand.ExecuteScalarAsync();
+                        var villainExistsQueryResult = await villainExistsSqlCommand.ExecuteScalarAsync();
 
-                        if (villainExistsQueryResult == 0)
+                        if (villainExistsQueryResult == null)
                         {
                             Console.WriteLine($"No villain with ID {villainId} exists in the database.");
                             return;
@@ -38,7 +38,7 @@ namespace MinionsNamesAsync
                         {
                             villainNameByIdSqlCommand.Parameters.AddWithValue("@VillainId", villainId);
 
-                            string villainNameQueryResult = (string)await villainNameByIdSqlCommand.ExecuteScalarAsync();
+                            string villainNameQueryResult = (string) await villainNameByIdSqlCommand.ExecuteScalarAsync();
 
                             const string MinionsInfoByVillainIdQueryString = @"
                                 SELECT m.[Name] AS MinionName, m.Age AS MinionAge

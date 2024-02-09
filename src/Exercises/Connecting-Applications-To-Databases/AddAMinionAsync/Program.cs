@@ -11,8 +11,6 @@ namespace AddAMinionAsync
         {
             try
             {
-                const string DatabaseConnectionString = @"Server=LENOVOLEGION\SQLEXPRESS;Database=MinionsDB;Integrated Security=true;";
-
                 string[] minionCommandTokens = Console.ReadLine().Split(new char[] { '.', ' ' }).Skip(1).ToArray();
 
                 string minionName = minionCommandTokens[0];
@@ -20,6 +18,8 @@ namespace AddAMinionAsync
                 string townName = minionCommandTokens[2];
 
                 string villainName = Console.ReadLine().Split(new char[] { '.', ' ' }).Skip(1).ToArray()[0];
+
+                const string DatabaseConnectionString = @"Server=DESKTOP-H75JB3P;Database=MinionsDB;Integrated Security=true;";
 
                 await using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnectionString))
                 {
@@ -31,13 +31,13 @@ namespace AddAMinionAsync
 
                     townExistsSqlCommand.Parameters.AddWithValue("@TownName", townName);
 
-                    int townExistsQueryResult = (int)await townExistsSqlCommand.ExecuteScalarAsync();
+                    var townExistsQueryResult = await townExistsSqlCommand.ExecuteScalarAsync();
 
-                    if (townExistsQueryResult == 0)
+                    if (townExistsQueryResult == null)
                     {
-                        const string InsertTownQueryString = @"INSERT INTO Towns ([Name], CountryCode) VALUES (@TownName, 1)";
+                        const string InsertTownQueryString = @"INSERT INTO Towns ([Name]) VALUES (@TownName)";
 
-                        using (SqlCommand insertTownSqlCommand = new SqlCommand(InsertTownQueryString, sqlConnection))
+                        await using (SqlCommand insertTownSqlCommand = new SqlCommand(InsertTownQueryString, sqlConnection))
                         {
                             insertTownSqlCommand.Parameters.AddWithValue("@TownName", townName);
 
@@ -52,25 +52,25 @@ namespace AddAMinionAsync
 
                     const string VillainExistsQueryString = @"SELECT 1 FROM Villains WHERE [Name] = @VillainName";
 
-                    using (SqlCommand villainExistsSqlCommand = new SqlCommand(VillainExistsQueryString, sqlConnection))
+                    await using (SqlCommand villainExistsSqlCommand = new SqlCommand(VillainExistsQueryString, sqlConnection))
                     {
                         villainExistsSqlCommand.Parameters.AddWithValue("@VillainName", villainName);
 
-                        int villainExistsQueryResult = (int)await villainExistsSqlCommand.ExecuteScalarAsync();
+                        var villainExistsQueryResult = await villainExistsSqlCommand.ExecuteScalarAsync();
 
-                        if (villainExistsQueryResult == 0)
+                        if (villainExistsQueryResult == null)
                         {
                             const string EvilnessFactorExistsQueryString = @"SELECT 1 FROM EvilnessFactors WHERE [Name] = 'Evil'";
 
-                            using (SqlCommand evilnessFactorExistsSqlCommand = new SqlCommand(EvilnessFactorExistsQueryString, sqlConnection))
+                            await using (SqlCommand evilnessFactorExistsSqlCommand = new SqlCommand(EvilnessFactorExistsQueryString, sqlConnection))
                             {
-                                int evilnessFactorExistsQueryResult = (int)await evilnessFactorExistsSqlCommand.ExecuteScalarAsync();
+                                var evilnessFactorExistsQueryResult = await evilnessFactorExistsSqlCommand.ExecuteScalarAsync();
 
-                                if (evilnessFactorExistsQueryResult == 0)
+                                if (evilnessFactorExistsQueryResult == null)
                                 {
                                     const string InsertEvilnessFactorQueryString = @"INSERT INTO EvilnessFactors ([Name]) VALUES ('Evil')";
 
-                                    using (SqlCommand insertEvilnessFactorSqlCommand = new SqlCommand(InsertEvilnessFactorQueryString, sqlConnection))
+                                    await using (SqlCommand insertEvilnessFactorSqlCommand = new SqlCommand(InsertEvilnessFactorQueryString, sqlConnection))
                                     {
                                         await insertEvilnessFactorSqlCommand.ExecuteNonQueryAsync();
                                     }
@@ -81,14 +81,14 @@ namespace AddAMinionAsync
 
                             SqlCommand evilFactorIdSqlCommand = new SqlCommand(EvilnessFactorIdQueryString, sqlConnection);
 
-                            int evilFactorId = (int)await evilFactorIdSqlCommand.ExecuteScalarAsync();
+                            int evilFactorId = (int) await evilFactorIdSqlCommand.ExecuteScalarAsync();
 
                             const string InsertVillainQueryString = @"
                                 INSERT INTO Villains ([Name], EvilnessFactorId)
                                 VALUES (@VillainName, @EvilFactorId)
                             ";
 
-                            using (SqlCommand insertVillainSqlCommand = new SqlCommand(InsertVillainQueryString, sqlConnection))
+                            await using (SqlCommand insertVillainSqlCommand = new SqlCommand(InsertVillainQueryString, sqlConnection))
                             {
                                 insertVillainSqlCommand.Parameters.AddWithValue("@VillainName", villainName);
                                 insertVillainSqlCommand.Parameters.AddWithValue("@EvilFactorId", evilFactorId);
@@ -109,14 +109,14 @@ namespace AddAMinionAsync
 
                     townIdByNameSqlCommand.Parameters.AddWithValue("@TownName", townName);
 
-                    int townIdByNameQueryResult = (int)await townIdByNameSqlCommand.ExecuteScalarAsync();
+                    int townIdByNameQueryResult = (int) await townIdByNameSqlCommand.ExecuteScalarAsync();
 
                     const string InsertMinionQueryString = @"
                         INSERT INTO Minions ([Name], Age, TownId)
                         VALUES (@MinionName, @Age, @TownId)
                     ";
 
-                    using (SqlCommand insertMinionSqlCommand = new SqlCommand(InsertMinionQueryString, sqlConnection))
+                    await using (SqlCommand insertMinionSqlCommand = new SqlCommand(InsertMinionQueryString, sqlConnection))
                     {
                         insertMinionSqlCommand.Parameters.AddWithValue("@MinionName", minionName);
                         insertMinionSqlCommand.Parameters.AddWithValue("@Age", minionAge);
@@ -132,7 +132,7 @@ namespace AddAMinionAsync
 
                             villainIdByNameSqlCommand.Parameters.AddWithValue("@VillainName", villainName);
 
-                            int villainIdByNameQueryResult = (int)await villainIdByNameSqlCommand.ExecuteScalarAsync();
+                            int villainIdByNameQueryResult = (int) await villainIdByNameSqlCommand.ExecuteScalarAsync();
 
                             const string LatestMinionIdByNameQueryString = @"
                                 SELECT TOP(1) Id FROM Minions 
@@ -144,14 +144,14 @@ namespace AddAMinionAsync
 
                             latestMinionIdByNameSqlCommand.Parameters.AddWithValue("@MinionName", minionName);
 
-                            int latestMinionIdByNameQueryResult = (int)await latestMinionIdByNameSqlCommand.ExecuteScalarAsync();
+                            int latestMinionIdByNameQueryResult = (int) await latestMinionIdByNameSqlCommand.ExecuteScalarAsync();
 
                             const string insertMinionsVillainsMappingQueryString = @"
                                 INSERT INTO MinionsVillains (MinionId, VillainId)
                                 VALUES (@MinionId, @VillainId)
                             ";
 
-                            using (SqlCommand insertMinionsVillainsMappingSqlCommand = new SqlCommand(insertMinionsVillainsMappingQueryString, sqlConnection))
+                            await using (SqlCommand insertMinionsVillainsMappingSqlCommand = new SqlCommand(insertMinionsVillainsMappingQueryString, sqlConnection))
                             {
                                 insertMinionsVillainsMappingSqlCommand.Parameters.AddWithValue("@MinionId", latestMinionIdByNameQueryResult);
                                 insertMinionsVillainsMappingSqlCommand.Parameters.AddWithValue("@VillainId", villainIdByNameQueryResult);
@@ -160,7 +160,7 @@ namespace AddAMinionAsync
 
                                 if (insertMinionsVillainsMappingQueryResult == 1)
                                 {
-                                    Console.WriteLine($"Successfully added {minionName} to be minion of {villainName}");
+                                    Console.WriteLine($"Successfully added {minionName} to be minion of {villainName}.");
                                 }
                             }
                         }
