@@ -8540,7 +8540,3 @@ WHERE MovieID = 46
 UPDATE Movies
 SET MovieTime = 190
 WHERE MovieID = 66
-
-
-
-
