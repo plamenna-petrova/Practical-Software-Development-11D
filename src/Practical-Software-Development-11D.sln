@@ -199,6 +199,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncreaseMinionAge", "Exerci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncreaseMinionAgeAsync", "Exercises\Connecting-Applications-To-Databases\IncreaseMinionAgeAsync\IncreaseMinionAgeAsync.csproj", "{CFFA6451-B188-4E69-8DAF-9B560A6E82F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMFramework", "Exercises\Connecting-Applications-To-Databases\ORMFramework\ORMFramework.csproj", "{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -549,6 +551,10 @@ Global
 		{CFFA6451-B188-4E69-8DAF-9B560A6E82F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFFA6451-B188-4E69-8DAF-9B560A6E82F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFFA6451-B188-4E69-8DAF-9B560A6E82F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -644,6 +650,7 @@ Global
 		{698E217F-85CD-4798-85CA-54F2C81621AA} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{CBE8FEFF-54B9-4429-91BF-3A1E78BB39F2} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{CFFA6451-B188-4E69-8DAF-9B560A6E82F4} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9} = {CCD73273-4607-4CFD-914B-34785290E298}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
