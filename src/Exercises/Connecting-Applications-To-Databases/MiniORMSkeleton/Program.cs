@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ORMFramework
+namespace MiniORMSkeleton
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {

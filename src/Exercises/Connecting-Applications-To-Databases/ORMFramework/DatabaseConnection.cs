@@ -15,7 +15,7 @@ namespace ORMFramework
 
         public DatabaseConnection(string connectionString)
         {
-            sqlConnection = new SqlConnection(connectionString);             
+            sqlConnection = new SqlConnection(connectionString);
         }
 
         private SqlCommand CreateSqlCommand(string queryString, params SqlParameter[] sqlParameters)
@@ -70,12 +70,13 @@ namespace ORMFramework
             {
                 using (SqlDataReader sqlDataReader = sqlCommand.ExecuteReader())
                 {
-                    while(sqlDataReader.Read())
+                    while (sqlDataReader.Read())
                     {
                         var columnValues = new object[sqlDataReader.FieldCount];
                         sqlDataReader.GetValues(columnValues);
 
                         var fieldValue = sqlDataReader.GetFieldValue<T>(0);
+
                         rows.Add(fieldValue);
                     }
                 }
@@ -94,7 +95,7 @@ namespace ORMFramework
 
             using (SqlCommand fetchResultSetSqlCommand = CreateSqlCommand(fetchResultSetQueryString))
             {
-                using (SqlDataReader sqlDataReader = fetchResultSetSqlCommand.ExecuteReader()) 
+                using (SqlDataReader sqlDataReader = fetchResultSetSqlCommand.ExecuteReader())
                 {
                     while (sqlDataReader.Read())
                     {
@@ -102,7 +103,7 @@ namespace ORMFramework
                         sqlDataReader.GetValues(columnValues);
 
                         var mappedObjectByColumns = MapColumnsToObject<T>(columnNames, columnValues);
-                        rows.Add(mappedObjectByColumns);    
+                        rows.Add(mappedObjectByColumns);
                     }
                 }
             }
@@ -130,9 +131,9 @@ namespace ORMFramework
 
             var sqlColumns = string.Join(", ", escapedColumns);
 
-            var sqlRows = string.Join(", ", 
-                rowParameterNames.Select(rpn => 
-                    string.Format("({0})", 
+            var sqlRows = string.Join(", ",
+                rowParameterNames.Select(rpn =>
+                    string.Format("({0})",
                         string.Join(", ", rpn.Select(x => $"@{x}")))));
 
             var insertEntitiesQueryString = string.Format(
@@ -143,8 +144,8 @@ namespace ORMFramework
             );
 
             var sqlParameters = rowParameterNames
-                .Zip(rowValues, (parameters, values) => 
-                    parameters.Zip(values, (parameter, value) => 
+                .Zip(rowValues, (parameters, values) =>
+                    parameters.Zip(values, (parameter, value) =>
                         new SqlParameter(parameter, value ?? DBNull.Value)))
                 .SelectMany(p => p)
                 .ToArray();
@@ -187,7 +188,7 @@ namespace ORMFramework
 
                 var columnsQueryString = string.Join(", ", columnsToUpdate.Select(col => $"{col} = @{col}"));
 
-                var primaryKeysQueryString = string.Join(" AND ", 
+                var primaryKeysQueryString = string.Join(" AND ",
                     primaryKeyProperties.Select(pk => $"{pk.Name} = @{pk.Name}"));
 
                 var updateEntitiesQueryString = string.Format(
@@ -222,7 +223,7 @@ namespace ORMFramework
                     .Zip(primaryKeyValues, (parameter, value) => new SqlParameter(parameter.Name, value))
                     .ToArray();
 
-                var primaryKeysQueryString = string.Join(" AND ", 
+                var primaryKeysQueryString = string.Join(" AND ",
                     primaryKeyProperties.Select(pk => $"{pk.Name} = @{pk.Name}"));
 
                 var deleteEntitiesQueryString = string.Format(
@@ -255,7 +256,7 @@ namespace ORMFramework
 
         public void Close() => sqlConnection.Close();
 
-        public SqlTransaction BeginTransaction() 
+        public SqlTransaction BeginTransaction()
         {
             sqlTransaction = sqlConnection.BeginTransaction();
             return sqlTransaction;

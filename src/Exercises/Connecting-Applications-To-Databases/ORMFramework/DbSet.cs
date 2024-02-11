@@ -8,7 +8,7 @@ namespace ORMFramework
 {
     public class DbSet<TEntity> : ICollection<TEntity> where TEntity : class, new()
     {
-        internal DbSet(IEnumerable<TEntity> entities)
+        public DbSet(IEnumerable<TEntity> entities)
         {
             Entities = entities.ToList();
             ChangeTracker = new ChangeTracker<TEntity>(entities);
@@ -22,46 +22,56 @@ namespace ORMFramework
 
         public bool IsReadOnly => Entities.IsReadOnly;
 
-        public void Add(TEntity item)
+        public void Add(TEntity entity)
         {
-            if (item == null)
+            if (entity == null)
             {
-                throw new ArgumentNullException(nameof(item), "Item cannot be null!");
+                throw new ArgumentNullException(nameof(entity), "Entity cannot be null!");
             }
 
-            Entities.Add(item);
+            Entities.Add(entity);
 
-            ChangeTracker.Add(item);
+            ChangeTracker.Add(entity);
         }
 
         public void Clear()
         {
             while (Entities.Any())
             {
-                var entity = Entities.First();
-                Remove(entity);
+                var entityToRemove = Entities.First();
+                Remove(entityToRemove);
             }
         }
 
-        public bool Contains(TEntity item) => Entities.Contains(item);
+        public bool Contains(TEntity entity) => Entities.Contains(entity);
 
         public void CopyTo(TEntity[] array, int arrayIndex) => Entities.CopyTo(array, arrayIndex);
 
-        public bool Remove(TEntity item)
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            if (item == null)
+            return GetEnumerator();
+        }
+
+        public IEnumerator<TEntity> GetEnumerator()
+        {
+            return Entities.GetEnumerator();
+        }
+
+        public bool Remove(TEntity entity)
+        {
+            if (entity == null)
             {
-                throw new ArgumentNullException(nameof(item), "Item cannot be null!");
+                throw new ArgumentNullException(nameof(entity), "entity cannot be null!");
             }
 
-            var removedSuccessfully = Entities.Remove(item);
+            bool isEntityRemovedSuccessfully = Entities.Remove(entity);
 
-            if (removedSuccessfully)
+            if (isEntityRemovedSuccessfully)
             {
-                ChangeTracker.Remove(item);
+                ChangeTracker.Remove(entity);
             }
 
-            return removedSuccessfully;
+            return isEntityRemovedSuccessfully;
         }
 
         public void RemoveRange(IEnumerable<TEntity> entities)
@@ -71,15 +81,5 @@ namespace ORMFramework
                 Remove(entity);
             }
         }
-
-        public IEnumerator<TEntity> GetEnumerator()
-        {
-            return Entities.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-    }
+    } 
 }
