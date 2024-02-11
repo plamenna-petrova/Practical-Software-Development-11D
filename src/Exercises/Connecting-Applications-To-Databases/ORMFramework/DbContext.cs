@@ -311,7 +311,7 @@ namespace ORMFramework
 
             var validationResult = Validator.TryValidateObject(entityToValidate, validationContext, validationErrors, validateAllProperties: true);
 
-            return validationResult;
+            return validationResult; 
         }
     }
 }
