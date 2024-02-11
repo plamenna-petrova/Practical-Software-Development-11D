@@ -187,19 +187,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChangeTownNamesCasing", "Ex
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChangeTownNamesCasingAsync", "Exercises\Connecting-Applications-To-Databases\ChangeTownNamesCasingAsync\ChangeTownNamesCasingAsync.csproj", "{E53D5612-B554-40D2-80E6-9B4115EC8D0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveVillain", "Exercises\Connecting-Applications-To-Databases\RemoveVillain\RemoveVillain.csproj", "{D3AF1782-E0EE-44D5-AFA7-3A0C9DF7C042}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoveVillain", "Exercises\Connecting-Applications-To-Databases\RemoveVillain\RemoveVillain.csproj", "{D3AF1782-E0EE-44D5-AFA7-3A0C9DF7C042}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveVillainAsync", "Exercises\Connecting-Applications-To-Databases\RemoveVillainAsync\RemoveVillainAsync.csproj", "{B9FA3893-51DE-4D12-BA00-A9D40AB8E48F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoveVillainAsync", "Exercises\Connecting-Applications-To-Databases\RemoveVillainAsync\RemoveVillainAsync.csproj", "{B9FA3893-51DE-4D12-BA00-A9D40AB8E48F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetAllMinionsNames", "Exercises\Connecting-Applications-To-Databases\GetAllMinionsNames\GetAllMinionsNames.csproj", "{B769D712-4E7E-4744-96A3-1ED33E9A65A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetAllMinionsNames", "Exercises\Connecting-Applications-To-Databases\GetAllMinionsNames\GetAllMinionsNames.csproj", "{B769D712-4E7E-4744-96A3-1ED33E9A65A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetAllMinionsNamesAsync", "Exercises\Connecting-Applications-To-Databases\GetAllMinionsNamesAsync\GetAllMinionsNamesAsync.csproj", "{698E217F-85CD-4798-85CA-54F2C81621AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetAllMinionsNamesAsync", "Exercises\Connecting-Applications-To-Databases\GetAllMinionsNamesAsync\GetAllMinionsNamesAsync.csproj", "{698E217F-85CD-4798-85CA-54F2C81621AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncreaseMinionAge", "Exercises\Connecting-Applications-To-Databases\IncreaseMinionAge\IncreaseMinionAge.csproj", "{CBE8FEFF-54B9-4429-91BF-3A1E78BB39F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncreaseMinionAge", "Exercises\Connecting-Applications-To-Databases\IncreaseMinionAge\IncreaseMinionAge.csproj", "{CBE8FEFF-54B9-4429-91BF-3A1E78BB39F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncreaseMinionAgeAsync", "Exercises\Connecting-Applications-To-Databases\IncreaseMinionAgeAsync\IncreaseMinionAgeAsync.csproj", "{CFFA6451-B188-4E69-8DAF-9B560A6E82F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncreaseMinionAgeAsync", "Exercises\Connecting-Applications-To-Databases\IncreaseMinionAgeAsync\IncreaseMinionAgeAsync.csproj", "{CFFA6451-B188-4E69-8DAF-9B560A6E82F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMFramework", "Exercises\Connecting-Applications-To-Databases\ORMFramework\ORMFramework.csproj", "{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORMFramework", "Exercises\Connecting-Applications-To-Databases\ORMFramework\ORMFramework.csproj", "{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniORMSkeleton", "Exercises\Connecting-Applications-To-Databases\MiniORMSkeleton\MiniORMSkeleton.csproj", "{FFE75A11-FDA3-4060-87F1-8EA3DCC49C2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -555,6 +557,10 @@ Global
 		{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFE75A11-FDA3-4060-87F1-8EA3DCC49C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE75A11-FDA3-4060-87F1-8EA3DCC49C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE75A11-FDA3-4060-87F1-8EA3DCC49C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE75A11-FDA3-4060-87F1-8EA3DCC49C2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -651,6 +657,7 @@ Global
 		{CBE8FEFF-54B9-4429-91BF-3A1E78BB39F2} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{CFFA6451-B188-4E69-8DAF-9B560A6E82F4} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{4E9C8718-EFE3-4669-A5D6-4FDA2877FCD9} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{FFE75A11-FDA3-4060-87F1-8EA3DCC49C2E} = {CCD73273-4607-4CFD-914B-34785290E298}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
