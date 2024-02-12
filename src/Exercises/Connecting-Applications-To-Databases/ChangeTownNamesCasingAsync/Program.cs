@@ -81,6 +81,8 @@ namespace ChangeTownNamesCasingAsync
                             }
                         }
                     }
+
+                    await sqlConnection.CloseAsync();
                 }
             }
             catch (SqlException sqlException)

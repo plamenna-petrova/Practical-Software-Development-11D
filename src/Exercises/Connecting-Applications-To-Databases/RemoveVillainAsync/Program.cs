@@ -65,6 +65,8 @@ namespace RemoveVillainAsync
                             }
                         }
                     }
+
+                    await sqlConnection.CloseAsync();
                 }
             }
             catch (SqlException sqlException)

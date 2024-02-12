@@ -164,6 +164,8 @@ namespace AddAMinion
                             }
                         }
                     }
+
+                    sqlConnection.Close();
                 }
             }
             catch (SqlException sqlException)

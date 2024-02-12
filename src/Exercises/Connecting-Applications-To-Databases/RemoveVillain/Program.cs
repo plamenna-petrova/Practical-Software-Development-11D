@@ -64,6 +64,8 @@ namespace RemoveVillain
                             }
                         }
                     }
+
+                    sqlConnection.Close();
                 }
             }
             catch (SqlException sqlException)

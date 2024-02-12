@@ -1,0 +1,16 @@
+
+CREATE DATABASE shop
+
+GO
+
+USE DATABASE shop
+
+GO
+
+CREATE TABLE product
+(
+	Id INT IDENTITY PRIMARY KEY,
+	[Name] VARCHAR(100) NOT NULL,
+	Price DECIMAL(10, 2),
+	Stock INT
+)

@@ -76,6 +76,8 @@ namespace MinionsNames
                             }
                         }
                     }
+
+                    sqlConnection.Close();
                 }
             }
             catch (SqlException sqlException)

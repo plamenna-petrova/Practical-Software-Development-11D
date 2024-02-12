@@ -44,6 +44,8 @@ namespace GetAllMinionsNamesAsync
                             }
                         }
                     }
+
+                    await sqlConnection.CloseAsync();
                 }
             }
             catch (SqlException sqlException)

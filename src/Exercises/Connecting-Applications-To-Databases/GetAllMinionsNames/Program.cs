@@ -43,6 +43,8 @@ namespace GetAllMinionsNames
                             }
                         }
                     }
+
+                    sqlConnection.Close();
                 }
             }
             catch (SqlException sqlException)

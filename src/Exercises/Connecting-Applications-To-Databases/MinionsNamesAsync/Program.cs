@@ -77,6 +77,8 @@ namespace MinionsNamesAsync
                             }
                         }
                     }
+
+                    await sqlConnection.CloseAsync();
                 }
             }
             catch (SqlException sqlException)

@@ -34,6 +34,8 @@ namespace VillainsNames
                             }
                         }
                     }
+
+                    sqlConnection.Close();
                 }
             }
             catch (SqlException sqlException)

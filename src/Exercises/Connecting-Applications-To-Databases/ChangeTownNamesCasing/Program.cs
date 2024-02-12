@@ -80,6 +80,8 @@ namespace ChangeTownNamesCasing
                             }
                         }
                     }
+
+                    sqlConnection.Close();
                 }
             }
             catch (SqlException sqlException)

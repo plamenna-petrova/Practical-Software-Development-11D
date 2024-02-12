@@ -207,6 +207,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniORM", "Exercises\Connec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniORM.App", "Exercises\Connecting-Applications-To-Databases\MiniORM.App\MiniORM.App.csproj", "{C7F7378D-323D-45A0-93CC-FCBD975A647E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUDAppUsingDBCommands", "Exercises\Connecting-Applications-To-Databases\CRUDAppUsingDBCommands\CRUDAppUsingDBCommands.csproj", "{2F76C1FF-3638-4F6C-AF04-7E2AB5D3203B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUDAppUsingORM", "Exercises\Connecting-Applications-To-Databases\CRUDAppUsingORM\CRUDAppUsingORM.csproj", "{15F364C5-2D5A-4480-9E68-38C9854F2A0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -573,6 +577,14 @@ Global
 		{C7F7378D-323D-45A0-93CC-FCBD975A647E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7F7378D-323D-45A0-93CC-FCBD975A647E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7F7378D-323D-45A0-93CC-FCBD975A647E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F76C1FF-3638-4F6C-AF04-7E2AB5D3203B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F76C1FF-3638-4F6C-AF04-7E2AB5D3203B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F76C1FF-3638-4F6C-AF04-7E2AB5D3203B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F76C1FF-3638-4F6C-AF04-7E2AB5D3203B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F364C5-2D5A-4480-9E68-38C9854F2A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F364C5-2D5A-4480-9E68-38C9854F2A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F364C5-2D5A-4480-9E68-38C9854F2A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F364C5-2D5A-4480-9E68-38C9854F2A0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -672,6 +684,8 @@ Global
 		{2C38FD40-396A-4169-9A93-6B8727B855D6} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{60A233B9-B653-41DA-9BDA-AA216570292F} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{C7F7378D-323D-45A0-93CC-FCBD975A647E} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{2F76C1FF-3638-4F6C-AF04-7E2AB5D3203B} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{15F364C5-2D5A-4480-9E68-38C9854F2A0B} = {CCD73273-4607-4CFD-914B-34785290E298}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}

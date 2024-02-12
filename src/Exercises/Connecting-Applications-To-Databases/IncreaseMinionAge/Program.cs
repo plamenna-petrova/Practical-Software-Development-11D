@@ -46,6 +46,8 @@ namespace IncreaseMinionAge
                             }
                         }
                     }
+
+                    sqlConnection.Close();
                 }
             }
             catch (SqlException sqlException)

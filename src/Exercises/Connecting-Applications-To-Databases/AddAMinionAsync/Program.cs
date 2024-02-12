@@ -165,6 +165,8 @@ namespace AddAMinionAsync
                             }
                         }
                     }
+
+                    await sqlConnection.CloseAsync();
                 }
             }
             catch (SqlException sqlException)

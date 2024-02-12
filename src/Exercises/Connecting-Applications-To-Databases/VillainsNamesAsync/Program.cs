@@ -35,6 +35,8 @@ namespace VillainsNamesAsync
                             }
                         }
                     }
+
+                    await sqlConnection.CloseAsync();
                 }
             }
             catch (SqlException sqlException)
