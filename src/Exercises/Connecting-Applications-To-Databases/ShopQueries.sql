@@ -3,7 +3,7 @@ CREATE DATABASE shop
 
 GO
 
-USE DATABASE shop
+USE shop
 
 GO
 
