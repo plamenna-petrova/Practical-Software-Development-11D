@@ -13,34 +13,42 @@ namespace MiniORMSkeleton
     /// </summary>
     internal class DatabaseConnection
     {
-        private readonly SqlConnection connection;
+        private readonly SqlConnection sqlConnection;
 
-        private SqlTransaction transaction;
+        private SqlTransaction sqlTransaction;
 
         public DatabaseConnection(string connectionString)
         {
-            this.connection = new SqlConnection(connectionString);
+            sqlConnection = new SqlConnection(connectionString);
         }
 
-        private SqlCommand CreateCommand(string queryText, params SqlParameter[] parameters)
-        {
-            var command = new SqlCommand(queryText, this.connection, this.transaction);
+        public void Open() => sqlConnection.Open();
 
-            foreach (var param in parameters)
+        public void Close() => sqlConnection.Close();
+
+        public SqlTransaction BeginTransaction()
+        {
+            sqlTransaction = sqlConnection.BeginTransaction();
+            return sqlTransaction;
+        }
+
+        public void UseDatabase()
+        {
+            string databaseName = sqlConnection.ConnectionString.Split(new char[] { ';', '=' })[3];
+
+            using (SqlCommand useDatabaseSqlCommand = CreateSqlCommand($"USE {databaseName}"))
             {
-                command.Parameters.Add(param);
+                useDatabaseSqlCommand.ExecuteScalar();
             }
-
-            return command;
         }
 
-        public int ExecuteNonQuery(string queryText, params SqlParameter[] parameters)
+        public int ExecuteNonQuery(string queryString, params SqlParameter[] sqlParameters)
         {
-            using (var query = CreateCommand(queryText, parameters))
+            using (SqlCommand sqlNonQueryCommand = CreateSqlCommand(queryString, sqlParameters))
             {
-                var result = query.ExecuteNonQuery();
+                int executedNonQueryResult = sqlNonQueryCommand.ExecuteNonQuery();
 
-                return result;
+                return executedNonQueryResult;
             }
         }
 
@@ -48,15 +56,15 @@ namespace MiniORMSkeleton
         {
             var rows = new List<string>();
 
-            var queryText = $@"SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{tableName}'";
+            string fetchColumnNamesQueryString = $@"SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{tableName}';";
 
-            using (var query = CreateCommand(queryText))
+            using (SqlCommand fetchColumnNamesSqlCommand = CreateSqlCommand(fetchColumnNamesQueryString))
             {
-                using (var reader = query.ExecuteReader())
+                using (SqlDataReader sqlDataReader = fetchColumnNamesSqlCommand.ExecuteReader())
                 {
-                    while (reader.Read())
+                    while (sqlDataReader.Read())
                     {
-                        var column = reader.GetString(0);
+                        string column = sqlDataReader.GetString(0);
 
                         rows.Add(column);
                     }
@@ -66,21 +74,22 @@ namespace MiniORMSkeleton
             return rows;
         }
 
-        public IEnumerable<T> ExecuteQuery<T>(string queryText)
+        public IEnumerable<T> ExecuteQuery<T>(string queryString)
         {
             var rows = new List<T>();
 
-            using (var query = CreateCommand(queryText))
+            using (SqlCommand sqlCommand = new SqlCommand(queryString, sqlConnection, sqlTransaction))
             {
-                using (var reader = query.ExecuteReader())
+                using (SqlDataReader sqlDataReader = sqlCommand.ExecuteReader())
                 {
-                    while (reader.Read())
+                    while (sqlDataReader.Read())
                     {
-                        var columnValues = new object[reader.FieldCount];
-                        reader.GetValues(columnValues);
+                        var columnValues = new object[sqlDataReader.FieldCount];
+                        sqlDataReader.GetValues(columnValues);
 
-                        var obj = reader.GetFieldValue<T>(0);
-                        rows.Add(obj);
+                        var fieldValue = sqlDataReader.GetFieldValue<T>(0);
+
+                        rows.Add(fieldValue);
                     }
                 }
             }
@@ -93,19 +102,20 @@ namespace MiniORMSkeleton
             var rows = new List<T>();
 
             var escapedColumns = string.Join(", ", columnNames.Select(EscapeColumn));
-            var queryText = $@"SELECT {escapedColumns} FROM {tableName}";
 
-            using (var query = CreateCommand(queryText))
+            var fetchResultSetQueryString = $@"SELECT {escapedColumns} FROM {tableName}";
+
+            using (SqlCommand fetchResultSetSqlCommand = CreateSqlCommand(fetchResultSetQueryString))
             {
-                using (var reader = query.ExecuteReader())
+                using (SqlDataReader sqlDataReader = fetchResultSetSqlCommand.ExecuteReader())
                 {
-                    while (reader.Read())
+                    while (sqlDataReader.Read())
                     {
-                        var columnValues = new object[reader.FieldCount];
-                        reader.GetValues(columnValues);
+                        var columnValues = new object[sqlDataReader.FieldCount];
+                        sqlDataReader.GetValues(columnValues);
 
-                        var obj = MapColumnsToObject<T>(columnNames, columnValues);
-                        rows.Add(obj);
+                        var mappedObjectByColumns = MapColumnsToObject<T>(columnNames, columnValues);
+                        rows.Add(mappedObjectByColumns);
                     }
                 }
             }
@@ -113,8 +123,7 @@ namespace MiniORMSkeleton
             return rows;
         }
 
-        public void InsertEntities<T>(IEnumerable<T> entities, string tableName, string[] columns)
-            where T : class
+        public void InsertEntities<T>(IEnumerable<T> entities, string tableName, string[] columns) where T : class
         {
             var identityColumns = GetIdentityColumns(tableName);
 
@@ -123,37 +132,37 @@ namespace MiniORMSkeleton
             var escapedColumns = columnsToInsert.Select(EscapeColumn).ToArray();
 
             var rowValues = entities
-                .Select(entity => columnsToInsert
-                    .Select(c => entity.GetType().GetProperty(c).GetValue(entity))
+                .Select(e => columnsToInsert
+                    .Select(col => e.GetType().GetProperty(col).GetValue(e))
                     .ToArray())
                 .ToArray();
 
             var rowParameterNames = Enumerable.Range(1, rowValues.Length)
-                .Select(i => columnsToInsert.Select(c => c + i).ToArray())
+                .Select(i => columnsToInsert.Select(col => col + i).ToArray())
                 .ToArray();
 
             var sqlColumns = string.Join(", ", escapedColumns);
 
             var sqlRows = string.Join(", ",
-                rowParameterNames.Select(p =>
+                rowParameterNames.Select(rpn =>
                     string.Format("({0})",
-                        string.Join(", ", p.Select(a => $"@{a}")))));
+                        string.Join(", ", rpn.Select(x => $"@{x}")))));
 
-            var query = string.Format(
+            var insertEntitiesQueryString = string.Format(
                 "INSERT INTO {0} ({1}) VALUES {2}",
                 tableName,
                 sqlColumns,
                 sqlRows
             );
 
-            var parameters = rowParameterNames
-                .Zip(rowValues, (@params, values) =>
-                    @params.Zip(values, (param, value) =>
-                        new SqlParameter(param, value ?? DBNull.Value)))
+            var sqlParameters = rowParameterNames
+                .Zip(rowValues, (parameters, values) =>
+                    parameters.Zip(values, (parameter, value) =>
+                        new SqlParameter(parameter, value ?? DBNull.Value)))
                 .SelectMany(p => p)
                 .ToArray();
 
-            var insertedRows = this.ExecuteNonQuery(query, parameters);
+            var insertedRows = ExecuteNonQuery(insertEntitiesQueryString, sqlParameters);
 
             if (insertedRows != entities.Count())
             {
@@ -161,8 +170,7 @@ namespace MiniORMSkeleton
             }
         }
 
-        public void UpdateEntities<T>(IEnumerable<T> modifiedEntities, string tableName, string[] columns)
-            where T : class
+        public void UpdateEntities<T>(IEnumerable<T> modifiedEntities, string tableName, string[] columns) where T : class
         {
             var identityColumns = GetIdentityColumns(tableName);
 
@@ -172,35 +180,37 @@ namespace MiniORMSkeleton
                 .Where(pi => pi.HasAttribute<KeyAttribute>())
                 .ToArray();
 
-            foreach (var entity in modifiedEntities)
+            foreach (var modifiedEntity in modifiedEntities)
             {
                 var primaryKeyValues = primaryKeyProperties
-                    .Select(c => c.GetValue(entity))
+                    .Select(pkprop => pkprop.GetValue(modifiedEntity))
                     .ToArray();
 
-                var primaryKeyParameters = primaryKeyProperties
-                    .Zip(primaryKeyValues, (param, value) => new SqlParameter(param.Name, value))
+                var primaryKeysSqlParameters = primaryKeyProperties
+                    .Zip(primaryKeyValues, (parameter, value) => new SqlParameter(parameter.Name, value))
                     .ToArray();
 
                 var rowValues = columnsToUpdate
-                    .Select(c => entity.GetType().GetProperty(c).GetValue(entity) ?? DBNull.Value)
+                    .Select(col => modifiedEntity.GetType().GetProperty(col).GetValue(modifiedEntity) ?? DBNull.Value)
                     .ToArray();
 
-                var columnsParameters = columnsToUpdate.Zip(rowValues, (param, value) => new SqlParameter(param, value))
+                var columnsSqlParameters = columnsToUpdate
+                    .Zip(rowValues, (parameter, value) => new SqlParameter(parameter, value))
                     .ToArray();
 
-                var columnsSql = string.Join(", ",
-                    columnsToUpdate.Select(c => $"{c} = @{c}"));
+                var columnsQueryString = string.Join(", ", columnsToUpdate.Select(col => $"{col} = @{col}"));
 
-                var primaryKeysSql = string.Join(" AND ",
+                var primaryKeysQueryString = string.Join(" AND ",
                     primaryKeyProperties.Select(pk => $"{pk.Name} = @{pk.Name}"));
 
-                var query = string.Format("UPDATE {0} SET {1} WHERE {2}",
+                var updateEntitiesQueryString = string.Format(
+                    "UPDATE {0} SET {1} WHERE {2}",
                     tableName,
-                    columnsSql,
-                    primaryKeysSql);
+                    columnsQueryString,
+                    primaryKeysQueryString
+                );
 
-                var updatedRows = this.ExecuteNonQuery(query, columnsParameters.Concat(primaryKeyParameters).ToArray());
+                var updatedRows = ExecuteNonQuery(updateEntitiesQueryString, columnsSqlParameters.Concat(primaryKeysSqlParameters).ToArray());
 
                 if (updatedRows != 1)
                 {
@@ -209,72 +219,74 @@ namespace MiniORMSkeleton
             }
         }
 
-        public void DeleteEntities<T>(IEnumerable<T> entitiesToDelete, string tableName, string[] columns)
-            where T : class
+        public void DeleteEntities<T>(IEnumerable<T> entitiesToDelete, string tableName, string[] columns) where T : class
         {
             var primaryKeyProperties = typeof(T).GetProperties()
                 .Where(pi => pi.HasAttribute<KeyAttribute>())
                 .ToArray();
 
-            foreach (var entity in entitiesToDelete)
+            foreach (var entityToDelete in entitiesToDelete)
             {
                 var primaryKeyValues = primaryKeyProperties
-                    .Select(c => c.GetValue(entity))
+                    .Select(pkprop => pkprop.GetValue(entityToDelete))
                     .ToArray();
 
-                var primaryKeyParameters = primaryKeyProperties
-                    .Zip(primaryKeyValues, (param, value) => new SqlParameter(param.Name, value))
+                var primaryKeySqlParameters = primaryKeyProperties
+                    .Zip(primaryKeyValues, (parameter, value) => new SqlParameter(parameter.Name, value))
                     .ToArray();
 
-                var primaryKeysSql = string.Join(" AND ",
+                var primaryKeysQueryString = string.Join(" AND ",
                     primaryKeyProperties.Select(pk => $"{pk.Name} = @{pk.Name}"));
 
-                var query = string.Format("DELETE FROM {0} WHERE {1}",
+                var deleteEntitiesQueryString = string.Format(
+                    "DELETE FROM {0} WHERE {1}",
                     tableName,
-                    primaryKeysSql);
+                    primaryKeysQueryString
+                );
 
-                var updatedRows = this.ExecuteNonQuery(query, primaryKeyParameters);
+                var deletedRows = ExecuteNonQuery(deleteEntitiesQueryString, primaryKeySqlParameters);
 
-                if (updatedRows != 1)
+                if (deletedRows != 1)
                 {
-                    throw new InvalidOperationException($"Delete for table {tableName} failed.");
+                    throw new InvalidOperationException($"Delete for {tableName} failed.");
                 }
             }
         }
 
+        private SqlCommand CreateSqlCommand(string queryString, params SqlParameter[] sqlParameters)
+        {
+            SqlCommand sqlCommand = new SqlCommand(queryString, sqlConnection, sqlTransaction);
+
+            foreach (var sqlParameter in sqlParameters)
+            {
+                sqlCommand.Parameters.Add(sqlParameter);
+            }
+
+            return sqlCommand;
+        }
+
         private IEnumerable<string> GetIdentityColumns(string tableName)
         {
-            const string identityColumnsSql =
-                "SELECT COLUMN_NAME FROM (SELECT COLUMN_NAME, COLUMNPROPERTY(OBJECT_ID(TABLE_NAME), COLUMN_NAME, 'IsIdentity') AS IsIdentity FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{0}') AS IdentitySpecs WHERE IsIdentity = 1";
+            const string IdentityColumnsQueryString = @"SELECT COLUMN_NAME FROM (SELECT COLUMN_NAME, COLUMNPROPERTY(OBJECT_ID(TABLE_NAME), COLUMN_NAME, 'IsIdentity') AS IsIdentity FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{0}') AS IdentitySpecs WHERE IsIdentity = 1";
 
-            var parametrizedSql = string.Format(identityColumnsSql, tableName);
+            var identityColumnsParametrizedQueryString = string.Format(IdentityColumnsQueryString, tableName);
 
-            var identityColumns = ExecuteQuery<string>(parametrizedSql);
+            var retrievedIdentityColumns = ExecuteQuery<string>(identityColumnsParametrizedQueryString);
 
-            return identityColumns;
+            return retrievedIdentityColumns;
         }
 
-        public SqlTransaction StartTransaction()
+        private static string EscapeColumn(string column)
         {
-            this.transaction = this.connection.BeginTransaction();
-            return this.transaction;
-        }
-
-        public void Open() => this.connection.Open();
-
-        public void Close() => this.connection.Close();
-
-        private static string EscapeColumn(string c)
-        {
-            var escapedColumn = $"[{c}]";
+            var escapedColumn = $"[{column}]";
             return escapedColumn;
         }
 
         private static T MapColumnsToObject<T>(string[] columnNames, object[] columns)
         {
-            var obj = Activator.CreateInstance<T>();
+            var targetObject = Activator.CreateInstance<T>();
 
-            for (var i = 0; i < columns.Length; i++)
+            for (int i = 0; i < columns.Length; i++)
             {
                 var columnName = columnNames[i];
                 var columnValue = columns[i];
@@ -284,11 +296,11 @@ namespace MiniORMSkeleton
                     columnValue = null;
                 }
 
-                var property = typeof(T).GetProperty(columnName);
-                property.SetValue(obj, columnValue);
+                var columnRelatedPropertyInfo = typeof(T).GetProperty(columnName);
+                columnRelatedPropertyInfo.SetValue(targetObject, columnValue);
             }
 
-            return obj;
+            return targetObject;
         }
     }
 }

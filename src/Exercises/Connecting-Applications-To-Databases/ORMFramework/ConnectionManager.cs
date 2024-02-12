@@ -12,6 +12,7 @@ namespace ORMFramework
         {
             this.databaseConnection = databaseConnection;
             this.databaseConnection.Open();
+            this.databaseConnection.UseDatabase();
         }
 
         public void Dispose()

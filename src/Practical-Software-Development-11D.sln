@@ -199,9 +199,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncreaseMinionAge", "Exerci
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncreaseMinionAgeAsync", "Exercises\Connecting-Applications-To-Databases\IncreaseMinionAgeAsync\IncreaseMinionAgeAsync.csproj", "{CFFA6451-B188-4E69-8DAF-9B560A6E82F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniORMSkeleton", "Exercises\Connecting-Applications-To-Databases\MiniORMSkeleton\MiniORMSkeleton.csproj", "{B9E0AB6D-CE29-48ED-BBF4-0881D4239795}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniORMSkeleton", "Exercises\Connecting-Applications-To-Databases\MiniORMSkeleton\MiniORMSkeleton.csproj", "{B9E0AB6D-CE29-48ED-BBF4-0881D4239795}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMFramework", "Exercises\Connecting-Applications-To-Databases\ORMFramework\ORMFramework.csproj", "{2C38FD40-396A-4169-9A93-6B8727B855D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORMFramework", "Exercises\Connecting-Applications-To-Databases\ORMFramework\ORMFramework.csproj", "{2C38FD40-396A-4169-9A93-6B8727B855D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniORM", "Exercises\Connecting-Applications-To-Databases\MiniORM\MiniORM.csproj", "{60A233B9-B653-41DA-9BDA-AA216570292F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniORM.App", "Exercises\Connecting-Applications-To-Databases\MiniORM.App\MiniORM.App.csproj", "{C7F7378D-323D-45A0-93CC-FCBD975A647E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -561,6 +565,14 @@ Global
 		{2C38FD40-396A-4169-9A93-6B8727B855D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C38FD40-396A-4169-9A93-6B8727B855D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C38FD40-396A-4169-9A93-6B8727B855D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60A233B9-B653-41DA-9BDA-AA216570292F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A233B9-B653-41DA-9BDA-AA216570292F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A233B9-B653-41DA-9BDA-AA216570292F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A233B9-B653-41DA-9BDA-AA216570292F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7F7378D-323D-45A0-93CC-FCBD975A647E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7F7378D-323D-45A0-93CC-FCBD975A647E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7F7378D-323D-45A0-93CC-FCBD975A647E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7F7378D-323D-45A0-93CC-FCBD975A647E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -658,6 +670,8 @@ Global
 		{CFFA6451-B188-4E69-8DAF-9B560A6E82F4} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{B9E0AB6D-CE29-48ED-BBF4-0881D4239795} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{2C38FD40-396A-4169-9A93-6B8727B855D6} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{60A233B9-B653-41DA-9BDA-AA216570292F} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{C7F7378D-323D-45A0-93CC-FCBD975A647E} = {CCD73273-4607-4CFD-914B-34785290E298}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
