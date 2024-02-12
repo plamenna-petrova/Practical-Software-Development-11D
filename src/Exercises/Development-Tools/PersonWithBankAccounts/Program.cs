@@ -10,7 +10,7 @@ namespace PersonWithBankAccounts
         {
             ID = id;
             Balance = balance;
-        }
+        } 
 
         public int ID { get; set; }
 
