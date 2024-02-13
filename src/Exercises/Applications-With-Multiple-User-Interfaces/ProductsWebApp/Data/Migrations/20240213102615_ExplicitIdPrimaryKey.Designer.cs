@@ -11,7 +11,7 @@ using ProductsWebApp.Data;
 
 namespace ProductsWebApp.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(ProductContext))]
     [Migration("20240213102615_ExplicitIdPrimaryKey")]
     partial class ExplicitIdPrimaryKey
     {

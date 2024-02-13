@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "MiniORM.App": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:61969;http://localhost:61970"
+    }
+  }
+}

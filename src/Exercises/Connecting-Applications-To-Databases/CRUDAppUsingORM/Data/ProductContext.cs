@@ -8,7 +8,7 @@ namespace CRUDAppUsingORM.Data
 {
     public class ProductContext : DbContext
     {
-        private const string connectionString = "Server=LENOVOLEGION\\SQLEXPRESS;Database=ProductDB;Trusted_Connection=True;";
+        private const string connectionString = "Server=DESKTOP-H75JB3P;Database=ProductsDB;Trusted_Connection=True;";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

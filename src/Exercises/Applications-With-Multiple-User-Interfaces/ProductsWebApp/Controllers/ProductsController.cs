@@ -12,7 +12,7 @@ namespace ProductsWebApp.Controllers
     {
         private readonly IProductsService _productsService;
 
-        public ProductsController(ApplicationDbContext context, IProductsService productsService)
+        public ProductsController(IProductsService productsService)
         {
             _productsService = productsService;
         }

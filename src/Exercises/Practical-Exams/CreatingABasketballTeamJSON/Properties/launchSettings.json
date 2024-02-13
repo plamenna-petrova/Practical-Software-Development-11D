@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "CreatingABasketballTeamJSON": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:61941;http://localhost:61942"
+    }
+  }
+}

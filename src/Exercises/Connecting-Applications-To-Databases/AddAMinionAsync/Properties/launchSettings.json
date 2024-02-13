@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "AddAMinionAsync": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:61949;http://localhost:61950"
+    }
+  }
+}

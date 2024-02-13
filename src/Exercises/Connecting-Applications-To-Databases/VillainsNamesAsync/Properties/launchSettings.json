@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "VillainsNamesAsync": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:61935;http://localhost:61936"
+    }
+  }
+}

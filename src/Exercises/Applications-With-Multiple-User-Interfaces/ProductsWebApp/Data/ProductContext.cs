@@ -5,9 +5,14 @@ using System.Xml;
 
 namespace ProductsWebApp.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ProductContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public ProductContext()
+        {
+
+        }
+
+        public ProductContext(DbContextOptions<ProductContext> options)
             : base(options)
         {
 

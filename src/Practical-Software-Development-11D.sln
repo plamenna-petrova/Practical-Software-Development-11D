@@ -213,7 +213,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRUDAppUsingORM", "Exercise
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications-With-Multiple-User-Interfaces", "Applications-With-Multiple-User-Interfaces", "{094A6104-CDFB-46EF-AA5B-26ED0985DBEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsWebApp", "Exercises\Applications-With-Multiple-User-Interfaces\ProductsWebApp\ProductsWebApp.csproj", "{0B310335-21FD-4460-99E4-A38EA506170C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsWebApp", "Exercises\Applications-With-Multiple-User-Interfaces\ProductsWebApp\ProductsWebApp.csproj", "{0B310335-21FD-4460-99E4-A38EA506170C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsWindowsFormsApp", "Exercises\Applications-With-Multiple-User-Interfaces\ProductsWindowsFormsApp\ProductsWindowsFormsApp.csproj", "{391A9EA0-8D83-412D-A651-CCDE240FDF0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -593,6 +595,10 @@ Global
 		{0B310335-21FD-4460-99E4-A38EA506170C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B310335-21FD-4460-99E4-A38EA506170C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B310335-21FD-4460-99E4-A38EA506170C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391A9EA0-8D83-412D-A651-CCDE240FDF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391A9EA0-8D83-412D-A651-CCDE240FDF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391A9EA0-8D83-412D-A651-CCDE240FDF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391A9EA0-8D83-412D-A651-CCDE240FDF0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -695,6 +701,7 @@ Global
 		{2F76C1FF-3638-4F6C-AF04-7E2AB5D3203B} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{15F364C5-2D5A-4480-9E68-38C9854F2A0B} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{0B310335-21FD-4460-99E4-A38EA506170C} = {094A6104-CDFB-46EF-AA5B-26ED0985DBEF}
+		{391A9EA0-8D83-412D-A651-CCDE240FDF0E} = {094A6104-CDFB-46EF-AA5B-26ED0985DBEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}

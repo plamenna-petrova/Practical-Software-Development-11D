@@ -6,9 +6,9 @@ namespace ProductsWebApp.Business
 {
     public class ProductsService : IProductsService
     {
-        private readonly ApplicationDbContext _applicationDbContext;
+        private readonly ProductContext _applicationDbContext;
 
-        public ProductsService(ApplicationDbContext applicationDbContext)
+        public ProductsService(ProductContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }

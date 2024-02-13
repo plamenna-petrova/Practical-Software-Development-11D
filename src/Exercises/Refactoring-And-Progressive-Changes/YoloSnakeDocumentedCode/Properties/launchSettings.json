@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "YoloSnakeDocumentedCode": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:61869;http://localhost:61870"
+    }
+  }
+}

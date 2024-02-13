@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "AbstractionBadCode": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:61883;http://localhost:61884"
+    }
+  }
+}

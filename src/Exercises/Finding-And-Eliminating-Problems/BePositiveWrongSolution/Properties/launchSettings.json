@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "BePositiveWrongSolution": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:61817;http://localhost:61818"
+    }
+  }
+}
