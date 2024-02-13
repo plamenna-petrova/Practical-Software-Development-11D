@@ -203,13 +203,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniORMSkeleton", "Exercise
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORMFramework", "Exercises\Connecting-Applications-To-Databases\ORMFramework\ORMFramework.csproj", "{2C38FD40-396A-4169-9A93-6B8727B855D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniORM", "Exercises\Connecting-Applications-To-Databases\MiniORM\MiniORM.csproj", "{60A233B9-B653-41DA-9BDA-AA216570292F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniORM", "Exercises\Connecting-Applications-To-Databases\MiniORM\MiniORM.csproj", "{60A233B9-B653-41DA-9BDA-AA216570292F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniORM.App", "Exercises\Connecting-Applications-To-Databases\MiniORM.App\MiniORM.App.csproj", "{C7F7378D-323D-45A0-93CC-FCBD975A647E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniORM.App", "Exercises\Connecting-Applications-To-Databases\MiniORM.App\MiniORM.App.csproj", "{C7F7378D-323D-45A0-93CC-FCBD975A647E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUDAppUsingDBCommands", "Exercises\Connecting-Applications-To-Databases\CRUDAppUsingDBCommands\CRUDAppUsingDBCommands.csproj", "{2F76C1FF-3638-4F6C-AF04-7E2AB5D3203B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRUDAppUsingDBCommands", "Exercises\Connecting-Applications-To-Databases\CRUDAppUsingDBCommands\CRUDAppUsingDBCommands.csproj", "{2F76C1FF-3638-4F6C-AF04-7E2AB5D3203B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUDAppUsingORM", "Exercises\Connecting-Applications-To-Databases\CRUDAppUsingORM\CRUDAppUsingORM.csproj", "{15F364C5-2D5A-4480-9E68-38C9854F2A0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRUDAppUsingORM", "Exercises\Connecting-Applications-To-Databases\CRUDAppUsingORM\CRUDAppUsingORM.csproj", "{15F364C5-2D5A-4480-9E68-38C9854F2A0B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications-With-Multiple-User-Interfaces", "Applications-With-Multiple-User-Interfaces", "{094A6104-CDFB-46EF-AA5B-26ED0985DBEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsWebApp", "Exercises\Applications-With-Multiple-User-Interfaces\ProductsWebApp\ProductsWebApp.csproj", "{0B310335-21FD-4460-99E4-A38EA506170C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -585,6 +589,10 @@ Global
 		{15F364C5-2D5A-4480-9E68-38C9854F2A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15F364C5-2D5A-4480-9E68-38C9854F2A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15F364C5-2D5A-4480-9E68-38C9854F2A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B310335-21FD-4460-99E4-A38EA506170C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B310335-21FD-4460-99E4-A38EA506170C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B310335-21FD-4460-99E4-A38EA506170C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B310335-21FD-4460-99E4-A38EA506170C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -686,6 +694,7 @@ Global
 		{C7F7378D-323D-45A0-93CC-FCBD975A647E} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{2F76C1FF-3638-4F6C-AF04-7E2AB5D3203B} = {CCD73273-4607-4CFD-914B-34785290E298}
 		{15F364C5-2D5A-4480-9E68-38C9854F2A0B} = {CCD73273-4607-4CFD-914B-34785290E298}
+		{0B310335-21FD-4460-99E4-A38EA506170C} = {094A6104-CDFB-46EF-AA5B-26ED0985DBEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
