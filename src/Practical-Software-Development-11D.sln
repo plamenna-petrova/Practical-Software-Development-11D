@@ -227,7 +227,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsConsoleApp", "Exerc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsDesktopApp", "Exercises\Combined-Products-Application\ProductsDesktopApp\ProductsDesktopApp.csproj", "{99AC8A68-C82D-4003-A9E9-EB844F25BF1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsWebApp", "Exercises\Combined-Products-Application\ProductsWebApp\ProductsWebApp.csproj", "{E02D4A6E-84DE-453F-8DF0-6F982AE4A281}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsWebApp", "Exercises\Combined-Products-Application\ProductsWebApp\ProductsWebApp.csproj", "{E02D4A6E-84DE-453F-8DF0-6F982AE4A281}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClientJSON", "Exercises\Packages-And-External-Libraries\TestClientJSON\TestClientJSON.csproj", "{17BA2DAB-CD7B-444F-B399-10BDCEAFDDC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsDealer", "Exercises\Packages-And-External-Libraries\CarsDealer\CarsDealer.csproj", "{91F7436A-49DE-4F0C-BAD1-91D6CEB54E34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsDealerJSON", "Exercises\Packages-And-External-Libraries\CarsDealerJSON\CarsDealerJSON.csproj", "{F18AD9EF-72D2-4108-A8EF-B61DAC3B37AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonTrainerOptimized", "Exercises\Packages-And-External-Libraries\PokemonTrainerOptimized\PokemonTrainerOptimized.csproj", "{89E39BDB-ABA7-442A-AB57-5BA5DFEF4926}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -631,6 +639,22 @@ Global
 		{E02D4A6E-84DE-453F-8DF0-6F982AE4A281}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E02D4A6E-84DE-453F-8DF0-6F982AE4A281}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E02D4A6E-84DE-453F-8DF0-6F982AE4A281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17BA2DAB-CD7B-444F-B399-10BDCEAFDDC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17BA2DAB-CD7B-444F-B399-10BDCEAFDDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17BA2DAB-CD7B-444F-B399-10BDCEAFDDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17BA2DAB-CD7B-444F-B399-10BDCEAFDDC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F7436A-49DE-4F0C-BAD1-91D6CEB54E34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F7436A-49DE-4F0C-BAD1-91D6CEB54E34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F7436A-49DE-4F0C-BAD1-91D6CEB54E34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F7436A-49DE-4F0C-BAD1-91D6CEB54E34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F18AD9EF-72D2-4108-A8EF-B61DAC3B37AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F18AD9EF-72D2-4108-A8EF-B61DAC3B37AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F18AD9EF-72D2-4108-A8EF-B61DAC3B37AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F18AD9EF-72D2-4108-A8EF-B61DAC3B37AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89E39BDB-ABA7-442A-AB57-5BA5DFEF4926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89E39BDB-ABA7-442A-AB57-5BA5DFEF4926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89E39BDB-ABA7-442A-AB57-5BA5DFEF4926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89E39BDB-ABA7-442A-AB57-5BA5DFEF4926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -739,6 +763,10 @@ Global
 		{9242ED0B-7DBC-4F13-94A0-3D725E12C633} = {6ABBCDBD-C477-4150-AD13-B08EB091279A}
 		{99AC8A68-C82D-4003-A9E9-EB844F25BF1F} = {6ABBCDBD-C477-4150-AD13-B08EB091279A}
 		{E02D4A6E-84DE-453F-8DF0-6F982AE4A281} = {6ABBCDBD-C477-4150-AD13-B08EB091279A}
+		{17BA2DAB-CD7B-444F-B399-10BDCEAFDDC3} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
+		{91F7436A-49DE-4F0C-BAD1-91D6CEB54E34} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
+		{F18AD9EF-72D2-4108-A8EF-B61DAC3B37AD} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
+		{89E39BDB-ABA7-442A-AB57-5BA5DFEF4926} = {0FAC3A5E-C8A1-4F0B-9AE5-FFD57401A0BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDE503C-AB1F-4D89-894B-4E645BFE0C33}
