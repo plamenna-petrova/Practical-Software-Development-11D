@@ -20,8 +20,8 @@ namespace CreatingABasketballTeamJSON
         {
             get
             {
-                double totalStats = Stats.Endurance + Stats.Sprint + Stats.Dribble + Stats.Passes + Stats.Shooting;
-                double averageStats = totalStats / 5;
+                // ...
+                double averageStats = 0;
 
                 return Math.Round(averageStats);
             }

@@ -23,7 +23,9 @@ namespace CreatingABasketballTeamJSON
                     return 0;
                 }
 
-                return Math.Round(Players.Average(p => p.AverageStats));
+                // ...
+
+                return 0;
             }
         }
 
