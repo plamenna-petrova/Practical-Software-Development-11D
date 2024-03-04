@@ -40,7 +40,7 @@ namespace Business
         {
             using (productContext = new ProductContext())
             {
-                var productToUpdate = productContext.Products.Find(product.Id);
+                Product productToUpdate = productContext.Products.Find(product.Id);
 
                 if (productToUpdate != null)
                 {
@@ -54,7 +54,7 @@ namespace Business
         {
             using (productContext = new ProductContext())
             {
-                var productToDelete = productContext.Products.Find(id);
+                Product productToDelete = productContext.Products.Find(id);
 
                 if (productToDelete != null)
                 {
